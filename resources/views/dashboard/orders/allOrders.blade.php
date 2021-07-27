@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -40,6 +39,28 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/style.css')}}">
     <!-- END: Custom CSS-->
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/vendors/css/vendors.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/vendors/css/charts/apexcharts.css')}}">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/bootstrap-extended.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/colors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/components.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/themes/dark-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/themes/semi-dark-layout.css')}}">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/core/colors/palette-gradient.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/pages/card-analytics.css')}}">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/style.css')}}">
+    <!-- END: Custom CSS-->
 
 </head>
 <!-- END: Head-->
@@ -47,6 +68,78 @@
 
 <div class="content-wrapper">
     <div class="content-header row">
+        <div class="col-lg-6 col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <h4 class="card-title">Product Orders</h4>
+                    <div class="dropdown chart-dropdown">
+                        <button class="btn btn-sm border-0 dropdown-toggle px-50" type="button" id="dropdownItem2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Last 7 Days
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownItem2">
+                            <a class="dropdown-item" href="#">Last 28 Days</a>
+                            <a class="dropdown-item" href="#">Last Month</a>
+                            <a class="dropdown-item" href="#">Last Year</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-body pt-50">
+                        <div id="product-order-chart" class="mb-2"></div>
+                        <div class="chart-info d-flex justify-content-between mb-1">
+                            <div class="series-info d-flex align-items-center">
+                                <i class="fa fa-circle-o text-bold-700 text-primary"></i>
+                                <span class="text-bold-600 ml-50">Delivered</span>
+                            </div>
+                            <div class="product-result">
+                                <span>23043</span>
+                            </div>
+                        </div>
+                        <div class="chart-info d-flex justify-content-between mb-1">
+                            <div class="series-info d-flex align-items-center">
+                                <i class="fa fa-circle-o text-bold-700 text-warning"></i>
+                                <span class="text-bold-600 ml-50">Pending</span>
+                            </div>
+                            <div class="product-result">
+                                <span>14658</span>
+                            </div>
+                        </div>
+                        <div class="chart-info d-flex justify-content-between mb-25">
+                            <div class="series-info d-flex align-items-center">
+                                <i class="fa fa-circle-o text-bold-700 text-danger"></i>
+                                <span class="text-bold-600 ml-50">Cancelled</span>
+                            </div>
+                            <div class="product-result">
+                                <span>4758</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-end">
+                    <h4 class="mb-0">Orders Overview</h4>
+                    <p class="font-medium-5 mb-0"><i class="feather icon-help-circle text-muted cursor-pointer"></i></p>
+                </div>
+                <div class="card-content">
+                    <div class="card-body px-0 pb-0">
+                        <div id="goal-overview-chart" class="mt-75"></div>
+                        <div class="row text-center mx-0">
+                            <div class="col-6 border-top border-right d-flex align-items-between flex-column py-1">
+                                <p class="mb-50">Delivered</p>
+                                <p class="font-large-1 text-bold-700 mb-50">786,617</p>
+                            </div>
+                            <div class="col-6 border-top d-flex align-items-between flex-column py-1">
+                                <p class="mb-50">In Progress</p>
+                                <p class="font-large-1 text-bold-700 mb-50">13,561</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="content-header-left col-md-9 col-12 mb-2">
             <div class="row breadcrumbs-top">
                 <div class="col-12">
@@ -100,7 +193,6 @@
                             <th></th>
                             <th>NAME</th>
                             <th>CATEGORY</th>
-                            <th>POPULARITY</th>
                             <th>ORDER STATUS</th>
                             <th>PRICE</th>
                         </tr>
@@ -110,11 +202,7 @@
                             <td></td>
                             <td class="product-name">Apple Watch series 4 GPS</td>
                             <td class="product-category">Computers</td>
-                            <td>
-                                <div class="progress progress-bar-success">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:97%"></div>
-                                </div>
-                            </td>
+                           
                             <td>
                                 <div class="chip chip-warning">
                                     <div class="chip-body">
@@ -128,11 +216,7 @@
                             <td></td>
                             <td class="product-name">Beats HeadPhones</td>
                             <td class="product-category">Computers</td>
-                            <td>
-                                <div class="progress progress-bar-primary">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:83%"></div>
-                                </div>
-                            </td>
+                            
                             <td>
                                 <div class="chip chip-success">
                                     <div class="chip-body">
@@ -146,11 +230,7 @@
                             <td></td>
                             <td class="product-name">Altec Lansing - Bluetooth Speaker</td>
                             <td class="product-category">Audio</td>
-                            <td>
-                                <div class="progress progress-bar-warning">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:57%"></div>
-                                </div>
-                            </td>
+                            
                             <td>
                                 <div class="chip chip-danger">
                                     <div class="chip-body">
@@ -164,11 +244,7 @@
                             <td></td>
                             <td class="product-name">Aluratek - Bluetooth Audio Receiver</td>
                             <td class="product-category">Computers</td>
-                            <td>
-                                <div class="progress progress-bar-warning">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:65%"></div>
-                                </div>
-                            </td>
+                            
                             <td>
                                 <div class="chip chip-warning">
                                     <div class="chip-body">
@@ -182,11 +258,7 @@
                             <td></td>
                             <td class="product-name">Aluratek - Bluetooth Audio Transmitter</td>
                             <td class="product-category">Audio</td>
-                            <td>
-                                <div class="progress progress-bar-warning">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:87%"></div>
-                                </div>
-                            </td>
+                           
                             <td>
                                 <div class="chip chip-danger">
                                     <div class="chip-body">
@@ -200,11 +272,7 @@
                             <td></td>
                             <td class="product-name">Basis - Peak Fitness and Sleep Tracker</td>
                             <td class="product-category">Fitness</td>
-                            <td>
-                                <div class="progress progress-bar-primary">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:47%"></div>
-                                </div>
-                            </td>
+                           
                             <td>
                                 <div class="chip chip-warning">
                                     <div class="chip-body">
@@ -218,11 +286,7 @@
                             <td></td>
                             <td class="product-name">Antec - Nano Diamond Thermal Compound</td>
                             <td class="product-category">Fitness</td>
-                            <td>
-                                <div class="progress progress-bar-warning">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:55%"></div>
-                                </div>
-                            </td>
+                           
                             <td>
                                 <div class="chip chip-primary">
                                     <div class="chip-body">
@@ -236,11 +300,7 @@
                             <td></td>
                             <td class="product-name">Antec - SmartBean Bluetooth Adapter</td>
                             <td class="product-category">Computer</td>
-                            <td>
-                                <div class="progress progress-bar-warning">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:63%"></div>
-                                </div>
-                            </td>
+                          
                             <td>
                                 <div class="chip chip-danger">
                                     <div class="chip-body">
@@ -254,11 +314,7 @@
                             <td></td>
                             <td class="product-name">Beats by Dr. Dre - 3' USB-to-Micro USB Cable</td>
                             <td class="product-category">Computer</td>
-                            <td>
-                                <div class="progress progress-bar-warning">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:87%"></div>
-                                </div>
-                            </td>
+                          
                             <td>
                                 <div class="chip chip-success">
                                     <div class="chip-body">
@@ -272,11 +328,7 @@
                             <td></td>
                             <td class="product-name">Beats by Dr. Dre - Bike Mount for Pill Speakers</td>
                             <td class="product-category">Audio</td>
-                            <td>
-                                <div class="progress progress-bar-warning">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:40%"></div>
-                                </div>
-                            </td>
+                           
                             <td>
                                 <div class="chip chip-warning">
                                     <div class="chip-body">
@@ -290,11 +342,7 @@
                             <td></td>
                             <td class="product-name">Bose® - SoundLink® Color Bluetooth Speaker</td>
                             <td class="product-category">Fitness</td>
-                            <td>
-                                <div class="progress progress-bar-primary">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:90%"></div>
-                                </div>
-                            </td>
+                           
                             <td>
                                 <div class="chip chip-primary">
                                     <div class="chip-body">
@@ -308,11 +356,7 @@
                             <td></td>
                             <td class="product-name">BRAVEN - Portable Bluetooth Speaker</td>
                             <td class="product-category">Fitness</td>
-                            <td>
-                                <div class="progress progress-bar-primary">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:87%"></div>
-                                </div>
-                            </td>
+                            
                             <td>
                                 <div class="chip chip-warning">
                                     <div class="chip-body">
@@ -326,11 +370,7 @@
                             <td></td>
                             <td class="product-name">Craig - Portable Wireless Speaker</td>
                             <td class="product-category">Computers</td>
-                            <td>
-                                <div class="progress progress-bar-danger">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:20%"></div>
-                                </div>
-                            </td>
+                           
                             <td>
                                 <div class="chip chip-danger">
                                     <div class="chip-body">
@@ -344,11 +384,7 @@
                             <td></td>
                             <td class="product-name">Definitive Technology - Wireless Speaker</td>
                             <td class="product-category">Fitness</td>
-                            <td>
-                                <div class="progress progress-bar-primary">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:75%"></div>
-                                </div>
-                            </td>
+                           
                             <td>
                                 <div class="chip chip-primary">
                                     <div class="chip-body">
@@ -362,11 +398,7 @@
                             <td></td>
                             <td class="product-name">Fitbit - Charge HR Activity Tracker + Heart Rate (Large)</td>
                             <td class="product-category">Audio</td>
-                            <td>
-                                <div class="progress progress-bar-warning">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:60%"></div>
-                                </div>
-                            </td>
+                          
                             <td>
                                 <div class="chip chip-primary">
                                     <div class="chip-body">
@@ -378,136 +410,13 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td class="product-name">Fitbit - Flex 1" USB Charging Cable</td>
-                            <td class="product-category">Fitness</td>
-                            <td>
-                                <div class="progress progress-bar-primary">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:87%"></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="chip chip-warning">
-                                    <div class="chip-body">
-                                        <div class="chip-text">on hold</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="product-price">$14.99</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="product-name">Fitbit - Activity Tracker</td>
-                            <td class="product-category">Fitness</td>
-                            <td>
-                                <div class="progress progress-bar-danger">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:35%"></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="chip chip-danger">
-                                    <div class="chip-body">
-                                        <div class="chip-text">canceled</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="product-price">$99.99</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="product-name">Fitbit - Charge Wireless Activity Tracker (Large)</td>
-                            <td class="product-category">Computers</td>
-                            <td>
-                                <div class="progress progress-bar-primary">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:87%"></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="chip chip-primary">
-                                    <div class="chip-body">
-                                        <div class="chip-text">pending</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="product-price">$129.99</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="product-name">Craig - Tower Speaker</td>
-                            <td class="product-category">Audio</td>
-                            <td>
-                                <div class="progress progress-bar-warning">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:68%"></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="chip chip-warning">
-                                    <div class="chip-body">
-                                        <div class="chip-text">on hold</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="product-price">$69.99</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="product-name">BRAVEN - Outdoor Speaker</td>
-                            <td class="product-category">Computers</td>
-                            <td>
-                                <div class="progress progress-bar-primary">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:97%"></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="chip chip-success">
-                                    <div class="chip-body">
-                                        <div class="chip-text">delivered</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="product-price">$199.99</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="product-name">Bose® - Bluetooth Speaker Travel Bag</td>
-                            <td class="product-category">Computers</td>
-                            <td>
-                                <div class="progress progress-bar-primary">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:89%"></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="chip chip-warning">
-                                    <div class="chip-body">
-                                        <div class="chip-text">on hold</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="product-price">$44.99</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="product-name">Altec Lansing - Mini H2O Bluetooth Speaker</td>
-                            <td class="product-category">Fitness</td>
-                            <td>
-                                <div class="progress progress-bar-success">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:87%"></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="chip chip-success">
-                                    <div class="chip-body">
-                                        <div class="chip-text">delivered</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="product-price">$199.99</td>
-                        </tr>
+                           
                     </tbody>
                 </table>
             </div>
             <!-- DataTable ends -->
 
-           
+
         </section>
         <!-- Data list view end -->
 
@@ -521,9 +430,9 @@
 
 <!-- BEGIN: Footer-->
 <footer class="footer footer-static footer-light">
-<p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2019<a class="text-bold-800 grey darken-2" href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">Pixinvent,</a>All rights Reserved</span><span class="float-md-right d-none d-md-block">Hand-crafted & Made with<i class="feather icon-heart pink"></i></span>
-    <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="feather icon-arrow-up"></i></button>
-</p>
+    <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2019<a class="text-bold-800 grey darken-2" href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">Pixinvent,</a>All rights Reserved</span><span class="float-md-right d-none d-md-block">Hand-crafted & Made with<i class="feather icon-heart pink"></i></span>
+        <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="feather icon-arrow-up"></i></button>
+    </p>
 </footer>
 <!-- END: Footer-->
 
@@ -550,7 +459,23 @@
 <!-- BEGIN: Page JS-->
 <script src="{{asset('/app-assets/js/scripts/ui/data-list-view.js')}}"></script>
 <!-- END: Page JS-->
+<!-- BEGIN: Vendor JS-->
+<script src="{{asset('/app-assets/vendors/js/vendors.min.js')}}"></script>
+<!-- BEGIN Vendor JS-->
 
+<!-- BEGIN: Page Vendor JS-->
+<script src="{{asset('/app-assets/vendors/js/charts/apexcharts.min.js')}}"></script>
+<!-- END: Page Vendor JS-->
+
+<!-- BEGIN: Theme JS-->
+<script src="{{asset('/app-assets/js/core/app-menu.js')}}"></script>
+<script src="{{asset('/app-assets/js/core/app.js')}}"></script>
+<script src="{{asset('/app-assets/js/scripts/components.js')}}"></script>
+<!-- END: Theme JS-->
+
+<!-- BEGIN: Page JS-->
+<script src="{{asset('/app-assets/js/scripts/cards/card-analytics.js')}}"></script>
+<!-- END: Page JS-->
 </body>
 <!-- END: Body-->
 

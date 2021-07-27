@@ -12,6 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/dashboard-productstatus', function () {
+    return view('dashboard/products/product_status');
+});
+Route::get('/dashboard-purchasehistory', function () {
+    return view('dashboard/user_utility/purchasehistory');
+});
+Route::get('/dashboard-cancellation', function () {
+    return view('dashboard/user_utility/cancellation');
+});
+
 Route::get('/dashboard-sellinghistory', function () {
     return view('dashboard/transactions/sellinghistory');
 });

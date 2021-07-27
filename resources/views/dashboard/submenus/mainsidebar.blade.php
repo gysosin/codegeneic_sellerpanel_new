@@ -79,6 +79,8 @@
                 </li>
                         <li><a href='/dashboard-allproducts'><i class="fa fa-cart-plus"></i><span class="menu-item" data-i18n="List View">Products</span></a>
                         </li>
+                        <li><a href='/dashboard-productstatus'><i class="fa fa-cart-plus"></i><span class="menu-item" data-i18n="List View">Products status</span></a>
+                        </li>
                         <li><a href='/dashboard-productreview'><i class="fa fa-star"></i><span class="menu-item" data-i18n="List View">Products Reviews</span></a>
                         </li>
 
@@ -87,11 +89,13 @@
             
                 <li class=" navigation-header"><span>User Realted utitlity</span>
                 </li>
-                <li><a href="form-select.html"><i class="fa fa-times-circle-o"></i><span class="menu-item" data-i18n="Select">Cancellation</span></a>
+                <li><a href='/dashboard-cancellation'><i class="fa fa-times-circle-o"></i><span class="menu-item" data-i18n="Select">Cancellation</span></a>
                 </li>
                 <li><a href='/dashboard-contactissue'><i class="fa fa-exclamation-triangle"></i><span class="menu-item" data-i18n="Switch">Contact Issue</span></a>
                 </li>
-                <li><a href="form-checkbox.html"><i class="fa fa-history"></i><span class="menu-item" data-i18n="Checkbox">Purchase History</span></a>
+                <li><a href='/dashboard-purchasehistory'><i class="fa fa-history"></i><span class="menu-item" data-i18n="Checkbox">Purchase History</span></a>
+                </li>
+                <li><a href='/dashboard-purchasehistory'><i class="fa fa-history"></i><span class="menu-item" data-i18n="Checkbox">Settlement Report</span></a>
                 </li>
                 <li class=" navigation-header"><span>Transactions</span>
                 </li>
