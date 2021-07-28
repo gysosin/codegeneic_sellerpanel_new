@@ -12,6 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/dashboard-contactforissue', function () {
+    return view('dashboard/contact/contactforissue');
+});
+Route::get('/dashboard-productoverview', function () {
+    return view('dashboard/products/productoverview');
+});
+
 Route::get('/dashboard-productstatus', function () {
     return view('dashboard/products/product_status');
 });
