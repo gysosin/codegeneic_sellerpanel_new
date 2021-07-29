@@ -1,30 +1,6 @@
-
-
-    <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/vendors/css/vendors.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/vendors/css/charts/apexcharts.css')}}">
-    <!-- END: Vendor CSS-->
-
-    <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/bootstrap-extended.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/colors.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/components.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/themes/dark-layout.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/themes/semi-dark-layout.css')}}">
-
-    <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/core/colors/palette-gradient.css')}}">
-    <!-- END: Page CSS-->
-
-    <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/style.css')}}">
-    <!-- END: Custom CSS-->
-
-</head>
-@include('dashboard.submenus.mainsidebar')
-
+@extends('layouts.master')
+@section('title', 'dashboard')
+@section('body')
 <div class="content-wrapper">
     <div class="content-header row">
     </div>
@@ -210,43 +186,4 @@
 </footer>
 <!-- END: Footer-->
 
-
-<!-- BEGIN: Vendor JS-->
-<script src="{{asset('/app-assets/vendors/js/vendors.min.js')}}"></script>
-<!-- BEGIN Vendor JS-->
-
-<!-- BEGIN: Page Vendor JS-->
-<script src="{{asset('/app-assets/vendors/js/charts/apexcharts.min.js')}}"></script>
-<!-- END: Page Vendor JS-->
-
-<!-- BEGIN: Theme JS-->
-<script src="{{asset('/app-assets/js/core/app-menu.js')}}"></script>
-<script src="{{asset('/app-assets/js/core/app.js')}}"></script>
-<script src="{{asset('/app-assets/js/scripts/components.js')}}"></script>
-<!-- END: Theme JS-->
-
-<!-- BEGIN: Page JS-->
-<script src="{{asset('/app-assets/js/scripts/pages/dashboard-ecommerce.js')}}"></script>
-<!-- END: Page JS-->
-
-    <!-- BEGIN: Vendor JS-->
-    <script src="{{asset('/app-assets/vendors/js/vendors.min.js')}}"></script>
-    <!-- BEGIN Vendor JS-->
-
-    <!-- BEGIN: Page Vendor JS-->
-    <script src="{{asset('/app-assets/vendors/js/charts/apexcharts.min.js')}}"></script>
-    <!-- END: Page Vendor JS-->
-
-    <!-- BEGIN: Theme JS-->
-    <script src="{{asset('/app-assets/js/core/app-menu.js')}}"></script>
-    <script src="{{asset('/app-assets/js/core/app.js')}}"></script>
-    <script src="{{asset('/app-assets/js/scripts/components.js')}}"></script>
-    <!-- END: Theme JS-->
-
-    <!-- BEGIN: Page JS-->
-    <script src="{{asset('/app-assets/js/scripts/charts/chart-apex.js')}}"></script>
-    <!-- END: Page JS-->
-</body>
-<!-- END: Body-->
-
-</html>
+@endsection()

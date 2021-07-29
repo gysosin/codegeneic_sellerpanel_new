@@ -1,49 +1,7 @@
+@extends('layouts.master')
+@section('title', 'dashboard')
+@section('body')
 
-<!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="ltr">
-<!-- BEGIN: Head-->
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="Vuesax admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Vuesax admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="PIXINVENT">
-    <title>Thumb View - Vuesax - Bootstrap HTML admin template</title>
-    <link rel="apple-touch-icon" href="{{asset('/app-assets/images/ico/apple-icon-120.png')}}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('/app-assets/images/ico/favicon.ico')}}">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
-
-    <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/vendors/css/vendors.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/vendors/css/file-uploaders/dropzone.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/vendors/css/tables/datatable/datatables.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/vendors/css/tables/datatable/extensions/dataTables.checkboxes.css')}}">
-    <!-- END: Vendor CSS-->
-
-    <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/bootstrap-extended.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/colors.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/components.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/themes/dark-layout.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/themes/semi-dark-layout.css')}}">
-
-    <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/core/colors/palette-gradient.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/plugins/file-uploaders/dropzone.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/pages/data-list-view.css')}}">
-    <!-- END: Page CSS-->
-
-    <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/style.css')}}">
-    <!-- END: Custom CSS-->
-
-</head>
-<!-- END: Head-->
-@include('dashboard.submenus.mainsidebar')
 <div class="content-wrapper">
     <div class="content-header row">
         <div class="content-header-left col-md-9 col-12 mb-2">
@@ -81,38 +39,37 @@
                 <table class="table data-thumb-view">
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>Date</th>
                             <th>Image</th>
                             <th>NAME</th>
-                            <th>CATEGORY</th>
+                            <th>Review</th>
                             <th>POPULARITY</th>
                                                </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
+                            <td>21/07/21</td>
                             <td class="product-img"><img src="{{asset('/app-assets/images/elements/apple-watch.png')}}" alt="Img placeholder">
                             </td>
                             <td class="product-name"><a href="#" >Apple Watch series 4 GPS</a></td>
-                            <td class="product-category">Computers</td>
+                            <td class="product-category">Nice product</td>
                             <td>
-                                <div class="progress progress-bar-success">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:97%"></div>
-                                </div>
-                            </td>
-                            
+                              
+                              5<div class="fa fa-star"></div>
+                              </div>
+                          </td>
                         </tr>
                         <tr>
                             <td></td>
                             <td class="product-img"><img src="{{asset('/app-assets/images/elements/magic-mouse.png')}}" alt="Img placeholder">
                             </td>
                             <td class="product-name">Beats HeadPhones</td>
-                            <td class="product-category">Computers</td>
+                            <td class="product-category">Great</td>
                             <td>
-                                <div class="progress progress-bar-primary">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:83%"></div>
-                                </div>
-                            </td>
+                              
+                              5<div class="fa fa-star"></div>
+                              </div>
+                          </td>
                            
                         </tr>
                         <tr>
@@ -120,12 +77,12 @@
                             <td class="product-img"><img src="{{asset('/app-assets/images/elements/iphone-x.png')}}" alt="Img placeholder">
                             </td>
                             <td class="product-name">Altec Lansing - Bluetooth Speaker</td>
-                            <td class="product-category">Audio</td>
+                            <td class="product-category">Best audio</td>
                             <td>
-                                <div class="progress progress-bar-warning">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:57%"></div>
-                                </div>
-                            </td>
+                              
+                              5<div class="fa fa-star"></div>
+                              </div>
+                          </td>
                             
                         </tr>
                         <tr>
@@ -133,10 +90,10 @@
                             <td class="product-img"><img src="{{asset('/app-assets/images/elements/ipad-pro.png')}}" alt="Img placeholder">
                             </td>
                             <td class="product-name">Aluratek - Bluetooth Audio Receiver</td>
-                            <td class="product-category">Computers</td>
+                            <td class="product-category">Feels awesome</td>
                             <td>
-                                <div class="progress progress-bar-warning">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:65%"></div>
+                              
+                                5<div class="fa fa-star"></div>
                                 </div>
                             </td>
                             
@@ -146,10 +103,10 @@
                             <td class="product-img"><img src="{{asset('/app-assets/images/elements/jbl-speaker.png')}}" alt="Img placeholder">
                             </td>
                             <td class="product-name">Aluratek - Bluetooth Audio Transmitter</td>
-                            <td class="product-category">Audio</td>
+                            <td class="product-category">Really Great</td>
                             <td>
-                                <div class="progress progress-bar-warning">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:87%"></div>
+                              
+                                5<div class="fa fa-star"></div>
                                 </div>
                             </td>
                            
@@ -159,12 +116,12 @@
                             <td class="product-img"><img src="{{asset('/app-assets/images/elements/beats-headphones.png')}}" alt="Img placeholder">
                             </td>
                             <td class="product-name">Basis - Peak Fitness and Sleep Tracker</td>
-                            <td class="product-category">Fitness</td>
+                            <td class="product-category">just wow</td>
                             <td>
-                                <div class="progress progress-bar-primary">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:47%"></div>
-                                </div>
-                            </td>
+                              
+                              5<div class="fa fa-star"></div>
+                              </div>
+                          </td>
                             
                         </tr>
                         <tr>
@@ -172,10 +129,10 @@
                             <td class="product-img"><img src="{{asset('/app-assets/images/elements/homepod.png')}}" alt="Img placeholder">
                             </td>
                             <td class="product-name">Antec - Nano Diamond Thermal Compound</td>
-                            <td class="product-category">Fitness</td>
+                            <td class="product-category">Perfect!!</td>
                             <td>
-                                <div class="progress progress-bar-warning">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:55%"></div>
+                              
+                                5<div class="fa fa-star"></div>
                                 </div>
                             </td>
                            
@@ -185,23 +142,22 @@
                             <td class="product-img"><img src="{{asset('/app-assets/images/elements/macbook-pro.png')}}" alt="Img placeholder">
                             </td>
                             <td class="product-name">Antec - SmartBean Bluetooth Adapter</td>
-                            <td class="product-category">Computer</td>
+                            <td class="product-category">I liked it</td>
                             <td>
-                                <div class="progress progress-bar-warning">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:63%"></div>
+                              
+                                5<div class="fa fa-star"></div>
                                 </div>
                             </td>
-                          
                         </tr>
                         <tr>
                             <td></td>
                             <td class="product-img"><img src="{{asset('/app-assets/images/elements/beats-headphones.png')}}" alt="Img placeholder">
                             </td>
                             <td class="product-name">Beats by Dr. Dre - 3' USB-to-Micro USB Cable</td>
-                            <td class="product-category">Computer</td>
+                            <td class="product-category">Best one</td>
                             <td>
-                                <div class="progress progress-bar-warning">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:87%"></div>
+                              
+                                5<div class="fa fa-star"></div>
                                 </div>
                             </td>
                            
@@ -211,10 +167,10 @@
                             <td class="product-img"><img src="{{asset('/app-assets/images/elements/jbl-speaker.png')}}" alt="Img placeholder">
                             </td>
                             <td class="product-name">Beats by Dr. Dre - Bike Mount for Pill Speakers</td>
-                            <td class="product-category">Audio</td>
+                            <td class="product-category">Made a great purchase</td>
                             <td>
-                                <div class="progress progress-bar-warning">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:40%"></div>
+                              
+                                5<div class="fa fa-star"></div>
                                 </div>
                             </td>
                            
@@ -224,10 +180,10 @@
                             <td class="product-img"><img src="{{asset('/app-assets/images/elements/apple-watch.png')}}" alt="Img placeholder">
                             </td>
                             <td class="product-name">Bose® - SoundLink® Color Bluetooth Speaker</td>
-                            <td class="product-category">Fitness</td>
+                            <td class="product-category">Very nice product</td>
                             <td>
-                                <div class="progress progress-bar-primary">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:90%"></div>
+                              
+                                5<div class="fa fa-star"></div>
                                 </div>
                             </td>
                            
@@ -237,12 +193,12 @@
                             <td class="product-img"><img src="{{asset('/app-assets/images/elements/macbook-pro.png')}}" alt="Img placeholder">
                             </td>
                             <td class="product-name">BRAVEN - Portable Bluetooth Speaker</td>
-                            <td class="product-category">Fitness</td>
+                            <td class="product-category">Thanks for delivering it on time</td>
                             <td>
-                                <div class="progress progress-bar-primary">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:87%"></div>
-                                </div>
-                            </td>
+                              
+                              5<div class="fa fa-star"></div>
+                              </div>
+                          </td>
                           
                         </tr>
                         <tr>
@@ -250,12 +206,12 @@
                             <td class="product-img"><img src="{{asset('/app-assets/images/elements/homepod.png')}}" alt="Img placeholder">
                             </td>
                             <td class="product-name">Craig - Portable Wireless Speaker</td>
-                            <td class="product-category">Computers</td>
+                            <td class="product-category">Great!!</td>
                             <td>
-                                <div class="progress progress-bar-danger">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" style="width:20%"></div>
-                                </div>
-                            </td>
+                              
+                              5<div class="fa fa-star"></div>
+                              </div>
+                          </td>
                            
                         </tr>
                        
@@ -292,31 +248,4 @@
 </footer>
 <!-- END: Footer-->
 
-
-<!-- BEGIN: Vendor JS-->
-<script src="{{asset('/app-assets/vendors/js/vendors.min.js')}}"></script>
-<!-- BEGIN Vendor JS-->
-
-<!-- BEGIN: Page Vendor JS-->
-<script src="{{asset('/app-assets/vendors/js/extensions/dropzone.min.js')}}"></script>
-<script src="{{asset('/app-assets/vendors/js/tables/datatable/datatables.min.js')}}"></script>
-<script src="{{asset('/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js')}}"></script>
-<script src="{{asset('/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js')}}"></script>
-<script src="{{asset('/app-assets/vendors/js/tables/datatable/datatables.checkboxes.min.js')}}"></script>
-<!-- END: Page Vendor JS-->
-
-<!-- BEGIN: Theme JS-->
-<script src="{{asset('/app-assets/js/core/app-menu.js')}}"></script>
-<script src="{{asset('/app-assets/js/core/app.js')}}"></script>
-<script src="{{asset('/app-assets/js/scripts/components.js')}}"></script>
-<!-- END: Theme JS-->
-
-<!-- BEGIN: Page JS-->
-<script src="{{asset('/app-assets/js/scripts/ui/data-list-view.js')}}"></script>
-<!-- END: Page JS-->
-
-</body>
-<!-- END: Body-->
-
-</html>
+@endsection()
