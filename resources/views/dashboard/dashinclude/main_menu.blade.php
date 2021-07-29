@@ -13,52 +13,53 @@
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
                 <li class=" nav-item"><a href='/'><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span></a>
-                    
+
                 </li>
                 <li class=" navigation-header"><span>Orders</span>
                 </li>
                 <li class=" nav-item"><a href='/dashboard-allorders'><i class="fa fa-opencart"></i><span class="menu-title" data-i18n="Email">Orders Status</span></a>
-                <ul class="menu-content">
-                <li class=" nav-item"><a href='/dashboard-allorders'><i class="feather icon-message-square"></i><span class="menu-title" data-i18n="Chat">All</span></a>
+                    <ul class="menu-content">
+                        <li class=" nav-item"><a href='/dashboard-allorders'><i class="feather icon-message-square"></i><span class="menu-title" data-i18n="Chat">All</span></a>
+                        </li>
+                        <li class=" nav-item"><a href='/dashboard-pendingorders'><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo">Pending</span></a>
+                        </li>
+                        <li class=" nav-item"><a href='/dashboard-processingorders'><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo">Processing</span></a>
+                        </li>
+                        <li class=" nav-item"><a href='/dashboard-deliveredorders'><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Delivered</span></a>
+                        </li>
+                        <li class=" nav-item"><a href='/dashboard-returnorders'><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Returned</span></a>
+                        </li>
+                        <li class=" nav-item"><a href='/dashboard-failedorders'><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Failed</span></a>
+                        </li>
+                    </ul>
                 </li>
-                <li class=" nav-item"><a href='/dashboard-pendingorders'><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo">Pending</span></a>
-                </li>
-                <li class=" nav-item"><a href='/dashboard-processingorders'><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo">Processing</span></a>
-                </li>
-                <li class=" nav-item"><a href='/dashboard-deliveredorders'><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Delivered</span></a>
-                </li>
-                <li class=" nav-item"><a href='/dashboard-returnorders'><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Returned</span></a>
-                </li> 
-                <li class=" nav-item"><a href='/dashboard-failedorders'><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Failed</span></a>
-                </li> 
-                </ul> </li>
-                
-        
+
+
                 <li class=" navigation-header"><span>Product Management</span>
                 </li>
-                        <li><a href='/dashboard-allproducts'><i class="fa fa-cart-plus"></i><span class="menu-item" data-i18n="List View">Products</span></a>
-                        <ul class="menu-content">
-                <li class=" nav-item"><a href='/dashboard-allproducts'><i class="feather icon-message-square"></i><span class="menu-title" data-i18n="Chat">Products</span></a>
-                </li>
-                <li class=" nav-item"><a href='/dashboard-processingorders'><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo">Bulk import</span></a>
-                </li>
-                <li class=" nav-item"><a href='/dashboard-deliveredorders'><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Bulk export</span></a>
-                </li>
+                <li><a href='/dashboard-allproducts'><i class="fa fa-cart-plus"></i><span class="menu-item" data-i18n="List View">Products</span></a>
+                    <ul class="menu-content">
+                        <li class=" nav-item"><a href='/dashboard-allproducts'><i class="feather icon-message-square"></i><span class="menu-title" data-i18n="Chat">Products</span></a>
+                        </li>
+                        <li class=" nav-item"><a href='/dashboard-bulkimport'><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo">Bulk import</span></a>
+                        </li>
+                        <li class=" nav-item"><a href='/dashboard-deliveredorders'><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Bulk export</span></a>
+                        </li>
                     </ul>
-                        </li>
-                        <li><a href='/dashboard-productreview'><i class="fa fa-star"></i><span class="menu-item" data-i18n="List View">Products Reviews</span></a>
-                        </li>
-                        <li><a href='/dashboard-productoverview'><i class="fa fa-star"></i><span class="menu-item" data-i18n="List View">Products Overview</span></a>
-                        </li>
+                </li>
+                <li><a href='/dashboard-productreview'><i class="fa fa-star"></i><span class="menu-item" data-i18n="List View">Products Reviews</span></a>
+                </li>
+                <li><a href='/dashboard-productoverview'><i class="fa fa-star"></i><span class="menu-item" data-i18n="List View">Products Overview</span></a>
+                </li>
 
 
                 </li>
-            
+
                 <li class=" navigation-header"><span>User Realted utitlity</span>
                 </li>
                 <li><a href='/dashboard-cancellation'><i class="fa fa-times-circle-o"></i><span class="menu-item" data-i18n="Select">Cancellation</span></a>
                 </li>
-               
+
                 <li><a href='/dashboard-purchasehistory'><i class="fa fa-history"></i><span class="menu-item" data-i18n="Checkbox">Purchase History</span></a>
                 </li>
                 <li><a href='/dashboard-purchasehistory'><i class="fa fa-history"></i><span class="menu-item" data-i18n="Checkbox">Settlement Report</span></a>
@@ -77,7 +78,7 @@
                 </li>
                 <li><a href='/dashboard-contactissue'><i class="fa fa-exclamation-triangle"></i><span class="menu-item" data-i18n="Switch">Contact Issue</span></a>
                 </li>
-               
+
             </ul>
         </div>
     </div>

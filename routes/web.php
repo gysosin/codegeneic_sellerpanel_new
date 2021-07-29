@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/register', function () {
+    return view('auth/registration');
+});
+Route::get('/login', function () {
+    return view('auth/login');
+});
 Route::get('/dashboard-contactforissue', function () {
     return view('dashboard/contact/contactforissue');
 });
@@ -58,6 +64,9 @@ Route::get('/dashboard-productreview', function () {
 });
 Route::get('/dashboard-bulkimport', function () {
     return view('dashboard/products/bulkimport');
+});
+Route::get('/dashboard-addproduct', function () {
+    return view('dashboard/products/addproduct');
 });
 Route::get('/dashboard-allproducts', function () {
     return view('dashboard/products/allproducts');
