@@ -87,7 +87,7 @@
     Action
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">View</a>
+    <a class="dropdown-item" href='/dashboard-orderview'>View</a>
     <a class="dropdown-item" href="#">invoice</a>
   </div>
 </div>
@@ -116,7 +116,7 @@
     Action
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">View</a>
+    <a class="dropdown-item" href='/dashboard-orderview'>View</a>
     <a class="dropdown-item" href="#">invoice</a>
   </div>
 </div>
@@ -144,7 +144,7 @@
     Action
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">View</a>
+    <a class="dropdown-item" href='/dashboard-orderview'>View</a>
     <a class="dropdown-item" href="#">invoice</a>
   </div>
 </div>
@@ -172,7 +172,7 @@
     Action
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">View</a>
+    <a class="dropdown-item" href='/dashboard-orderview'>View</a>
     <a class="dropdown-item" href="#">invoice</a>
   </div>
 </div>
@@ -200,7 +200,7 @@
     Action
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">View</a>
+    <a class="dropdown-item" href='/dashboard-orderview'>View</a>
     <a class="dropdown-item" href="#">invoice</a>
   </div>
 </div>
@@ -289,4 +289,5 @@
     </p>
 </footer>
 <!-- END: Footer-->
+
 @endsection()

@@ -1,5 +1,67 @@
 @extends('layouts.master')
 @section('title', 'dashboard')
+<style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 23px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 15px;
+            width: 15px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #377dff;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #377dff;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+    </style>
 @section('body')
 <div class="content-wrapper">
     <div class="content-header row">
@@ -39,7 +101,7 @@
 <h3 class="h3 mb-0 text-gray-800">Product List</h3>
 </div>
 <div class="col-md-4">
-<a href="" class="btn btn-primary  float-right">
+<a href='/dashboard-addproduct' class="btn btn-primary  float-right">
 <i class="tio-add-circle"></i>
 <span class="text">Add new product</span>
 </a>
@@ -65,7 +127,7 @@
                           
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-sm" href="">
+                                <a class="btn btn-primary btn-sm" href='/dashboard-editproduct'>
                                     <i class="tio-edit"></i>Edit
                                 </a>
                                 <a class="btn btn-danger btn-sm" href="javascript:" onclick="form_alert('product-13','Want to delete this item ?')">
@@ -89,7 +151,7 @@
                           
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-sm" href="">
+                                <a class="btn btn-primary btn-sm" href='/dashboard-editproduct'>
                                     <i class="tio-edit"></i>Edit
                                 </a>
                                 <a class="btn btn-danger btn-sm" href="javascript:" onclick="form_alert('product-13','Want to delete this item ?')">
@@ -113,7 +175,7 @@
                           
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-sm" href="">
+                                <a class="btn btn-primary btn-sm" href='/dashboard-editproduct'>
                                     <i class="tio-edit"></i>Edit
                                 </a>
                                 <a class="btn btn-danger btn-sm" href="javascript:" onclick="form_alert('product-13','Want to delete this item ?')">
@@ -137,7 +199,7 @@
                           
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-sm" href="">
+                                <a class="btn btn-primary btn-sm" href='/dashboard-editproduct'>
                                     <i class="tio-edit"></i>Edit
                                 </a>
                                 <a class="btn btn-danger btn-sm" href="javascript:" onclick="form_alert('product-13','Want to delete this item ?')">
@@ -161,7 +223,7 @@
                           
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-sm" href="">
+                                <a class="btn btn-primary btn-sm" href='/dashboard-editproduct'>
                                     <i class="tio-edit"></i>Edit
                                 </a>
                                 <a class="btn btn-danger btn-sm" href="javascript:" onclick="form_alert('product-13','Want to delete this item ?')">
@@ -185,7 +247,7 @@
                           
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-sm" href="">
+                                <a class="btn btn-primary btn-sm" href='/dashboard-editproduct'>
                                     <i class="tio-edit"></i>Edit
                                 </a>
                                 <a class="btn btn-danger btn-sm" href="javascript:" onclick="form_alert('product-13','Want to delete this item ?')">
@@ -209,7 +271,7 @@
                           
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-sm" href="">
+                                <a class="btn btn-primary btn-sm" href='/dashboard-editproduct'>
                                     <i class="tio-edit"></i>Edit
                                 </a>
                                 <a class="btn btn-danger btn-sm" href="javascript:" onclick="form_alert('product-13','Want to delete this item ?')">
@@ -233,7 +295,7 @@
                           
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-sm" href="">
+                                <a class="btn btn-primary btn-sm" href='/dashboard-editproduct'>
                                     <i class="tio-edit"></i>Edit
                                 </a>
                                 <a class="btn btn-danger btn-sm" href="javascript:" onclick="form_alert('product-13','Want to delete this item ?')">
@@ -257,7 +319,7 @@
                           
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-sm" href="">
+                                <a class="btn btn-primary btn-sm" href='/dashboard-editproduct'>
                                     <i class="tio-edit"></i>Edit
                                 </a>
                                 <a class="btn btn-danger btn-sm" href="javascript:" onclick="form_alert('product-13','Want to delete this item ?')">
@@ -281,7 +343,7 @@
                           
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-sm" href="">
+                                <a class="btn btn-primary btn-sm" href='/dashboard-editproduct'>
                                     <i class="tio-edit"></i>Edit
                                 </a>
                                 <a class="btn btn-danger btn-sm" href="javascript:" onclick="form_alert('product-13','Want to delete this item ?')">

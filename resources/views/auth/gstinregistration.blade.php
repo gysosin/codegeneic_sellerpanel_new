@@ -27,7 +27,7 @@
                                         <div class="card-content">
                                             <div class="card-body pt-0">
                                                 <form action="index.html">
-                                                <div class="form-label-group">
+                                                    <div class="form-label-group">
                                                         <input type="text" id="inputName" class="form-control" placeholder="Name" required>
                                                         <label for="inputName">Name</label>
                                                     </div>
@@ -41,15 +41,16 @@
                                                     </div>
                                                     <div class="form-label-group">
                                                         <input type="text" id="" class="form-control" placeholder="company Pancard" required>
-                                                        <label for="">Personal Pancard</label>
+                                                        <label for="">company Pancard</label>
                                                     </div>
                                                     <div class="form-label-group">
                                                         <input type="text" id="" class="form-control" placeholder="Business type" required>
                                                         <label for="">Business type</label>
                                                     </div>
-                                                   
+
+
                                                     <a href='/login' class="btn btn-outline-primary float-left btn-inline mb-50">Login</a>
-                                                    <button href='/2register' type="" class="btn btn-primary float-right btn-inline mb-50">Next</a>
+                                                    <button type="submit" class="btn btn-primary float-right btn-inline mb-50">Next</a>
                                                 </form>
                                             </div>
                                         </div>

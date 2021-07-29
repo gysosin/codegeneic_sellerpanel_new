@@ -129,13 +129,12 @@
     </style>
 <script src="https://demo.6amtech.com/6valley/public/assets/back-end/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js"></script>
 <link rel="stylesheet" href="https://demo.6amtech.com/6valley/public/assets/back-end/css/toastr.css">
-</head>
 @section('body')
 <div class="content-wrapper">
 
     <div class="row">
         <div class="col-md-12">
-            <form class="product-form" action="https://demo.6amtech.com/6valley/seller/product/add-new" method="post" enctype="multipart/form-data" id="product_form">
+            <form class="product-form" action="https://demo.6amtech.com/6valley/seller/product/update/17" method="post" enctype="multipart/form-data" id="product_form">
                 <input type="hidden" name="_token" value="YpyxpvXoZnhleRKo4nPbH5O6jG9nYzKHIx5tU4QS">
                 <div class="card">
                     <div class="card-header">
@@ -143,7 +142,7 @@
                             <li class="nav-item">
                                 <a class="nav-link lang_link active" href="#" id="en-link">English(EN)</a>
                             </li>
-                           
+                            
                         </ul>
                     </div>
                     <div class="card-body">
@@ -151,17 +150,36 @@
                             <div class="form-group">
                                 <label class="input-label" for="en_name">Name
                                     (EN)</label>
-                                <input type="text" required name="name[]" id="en_name" class="form-control" placeholder="New Product" required>
+                                <input type="text" required name="name[]" id="en_name" value="Kodak PIXPRO astro zoom AZ421-RD 16MP digital camera" class="form-control" placeholder="New Product" required>
                             </div>
                             <input type="hidden" name="lang[]" value="en">
                             <div class="form-group pt-4">
-                                <label class="input-label" for="en_description">Description
+                                <label class="input-label">Description
                                     (EN)</label>
-                                <textarea name="description[]" class="editor" cols="30" rows="10" required></textarea>
+                                <textarea name="description[]" style="display:none" required><h1>About this item</h1>
+
+<ul>
+	<li>42X Optical Zoom</li>
+	<li>24mm Wide Angle.Operating/Storage Temperature : Operating 32 to 104&deg;F (0 to 40&deg;C). Humidity: 0 - 90%</li>
+	<li>16 Megapixels. Face Detection Technology. Fill Flash and Slow-Sync Flash</li>
+	<li>3&quot; LCD Screen</li>
+	<li>720p HD Video</li>
+</ul>
+
+<p>16 Megapixels</p>
+
+<p>Beauty is in the details.</p>
+
+<p>With plenty of pixels, you can alter your photos by cropping, zooming, or enlarging without losing out on quality. Plus, the CCD sensor ensures your images will be low-noise every time.</p>
+
+<p>24mm Wide Angle</p>
+
+<p>More to work with.</p>
+
+<p>For those times when there is much more to the story, rely on the AZ421&rsquo;s gracious 24mm Wide Angle lens. Don&rsquo;t just snap part of the bigger picture, get the whole thing.</p></textarea>
                             </div>
                         </div>
                        
-                    </div>
                 </div>
                 <div class="card mt-2 rest-part">
                     <div class="card-header">
@@ -172,51 +190,29 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <label for="name">Category</label>
-                                    <select class="js-example-basic-multiple form-control" name="category_id" onchange="getRequest('https://demo.6amtech.com/6valley/seller/product/get-categories?parent_id='+this.value,'sub-category-select','select')" required>
-                                        <option value="" selected disabled>---Select---</option>
-                                        <option value="37">
-                                            Women&#039;s Fashion
-                                        </option>
-                                        <option value="38">
-                                            Men&#039;s Fashion
-                                        </option>
-                                        <option value="39">
-                                            Phones &amp; Telecom
-                                        </option>
-                                        <option value="40">
-                                            Computer, Office &amp; Security
-                                        </option>
-                                        <option value="43">
-                                            Jewelry &amp; Watches
-                                        </option>
-                                        <option value="44">
-                                            Home, Pet &amp; Appliances
-                                        </option>
-                                        <option value="45">
-                                            Bags &amp; Shoes
-                                        </option>
-                                        <option value="46">
-                                            Toys , Kids &amp; Babies
-                                        </option>
-                                        <option value="47">
-                                            Outdoor Fun &amp; Sports
-                                        </option>
-                                        <option value="114">
-                                            Home Improvement &amp; Tools
-                                        </option>
-                                        <option value="116">
-                                            Beauty, Health &amp; Hair
-                                        </option>
+                                    <select class="js-example-basic-multiple js-states js-example-responsive form-control" name="category_id" id="category_id" onchange="getRequest('https://demo.6amtech.com/6valley/admin/product/get-categories?parent_id='+this.value,'sub-category-select','select')">
+                                        <option value="0" selected disabled>---Select---</option>
+                                        <option value="37">Women&#039;s Fashion</option>
+                                        <option value="38" selected>Men&#039;s Fashion</option>
+                                        <option value="39">Phones &amp; Telecom</option>
+                                        <option value="40">Computer, Office &amp; Security</option>
+                                        <option value="43">Jewelry &amp; Watches</option>
+                                        <option value="44">Home, Pet &amp; Appliances</option>
+                                        <option value="45">Bags &amp; Shoes</option>
+                                        <option value="46">Toys , Kids &amp; Babies</option>
+                                        <option value="47">Outdoor Fun &amp; Sports</option>
+                                        <option value="114">Home Improvement &amp; Tools</option>
+                                        <option value="116">Beauty, Health &amp; Hair</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="name">Sub Category</label>
-                                    <select class="js-example-basic-multiple form-control" name="sub_category_id" id="sub-category-select" onchange="getRequest('https://demo.6amtech.com/6valley/seller/product/get-categories?parent_id='+this.value,'sub-sub-category-select','select')">
+                                    <select class="js-example-basic-multiple js-states js-example-responsive form-control" name="sub_category_id" id="sub-category-select" data-id="70" onchange="getRequest('https://demo.6amtech.com/6valley/admin/product/get-categories?parent_id='+this.value,'sub-sub-category-select','select')">
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="name">Sub Sub Category</label>
-                                    <select class="js-example-basic-multiple form-control" name="sub_sub_category_id" id="sub-sub-category-select">
+                                    <select class="js-example-basic-multiple js-states js-example-responsive form-control" data-id="" name="sub_sub_category_id" id="sub-sub-category-select">
                                     </select>
                                 </div>
                             </div>
@@ -225,12 +221,12 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="name">Brand</label>
-                                    <select class="js-example-basic-multiple js-states js-example-responsive form-control" name="brand_id" required>
+                                    <select class="js-example-basic-multiple js-states js-example-responsive form-control" name="brand_id">
                                         <option value="" selected disabled>---Select---</option>
                                         <option value="9">Apple</option>
                                         <option value="8">Bata</option>
                                         <option value="3">Dove</option>
-                                        <option value="6">Kodak</option>
+                                        <option value="6" selected>Kodak</option>
                                         <option value="1">Ledger</option>
                                         <option value="5">Samsung</option>
                                         <option value="2">Subrtex</option>
@@ -240,11 +236,11 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="name">Unit</label>
-                                    <select class="js-example-basic-multiple form-control" name="unit">
-                                        <option value="kg">kg</option>
-                                        <option value="pc">pc</option>
-                                        <option value="gms">gms</option>
-                                        <option value="ltrs">ltrs</option>
+                                    <select class="js-example-basic-multiple js-states js-example-responsive form-control" name="unit">
+                                        <option value=kg>kg</option>
+                                        <option value=pc selected>pc</option>
+                                        <option value=gms>gms</option>
+                                        <option value=ltrs>ltrs</option>
                                     </select>
                                 </div>
                             </div>
@@ -263,437 +259,437 @@
                                         Colors :
                                     </label>
                                     <label class="switch">
-                                        <input type="checkbox" class="status" name="colors_active" value="">
+                                        <input type="checkbox" class="status" name="colors_active">
                                         <span class="slider round"></span>
                                     </label>
                                     <select class="form-control js-select2-custom" name="colors[]" multiple="multiple" id="colors-selector" disabled>
-                                        <option value="#F0F8FF">
+                                        <option value=#F0F8FF>
                                             AliceBlue
                                         </option>
-                                        <option value="#9966CC">
+                                        <option value=#9966CC>
                                             Amethyst
                                         </option>
-                                        <option value="#FAEBD7">
+                                        <option value=#FAEBD7>
                                             AntiqueWhite
                                         </option>
-                                        <option value="#00FFFF">
+                                        <option value=#00FFFF>
                                             Aqua
                                         </option>
-                                        <option value="#7FFFD4">
+                                        <option value=#7FFFD4>
                                             Aquamarine
                                         </option>
-                                        <option value="#F0FFFF">
+                                        <option value=#F0FFFF>
                                             Azure
                                         </option>
-                                        <option value="#F5F5DC">
+                                        <option value=#F5F5DC>
                                             Beige
                                         </option>
-                                        <option value="#FFE4C4">
+                                        <option value=#FFE4C4>
                                             Bisque
                                         </option>
-                                        <option value="#000000">
+                                        <option value=#000000>
                                             Black
                                         </option>
-                                        <option value="#FFEBCD">
+                                        <option value=#FFEBCD>
                                             BlanchedAlmond
                                         </option>
-                                        <option value="#0000FF">
+                                        <option value=#0000FF>
                                             Blue
                                         </option>
-                                        <option value="#8A2BE2">
+                                        <option value=#8A2BE2>
                                             BlueViolet
                                         </option>
-                                        <option value="#A52A2A">
+                                        <option value=#A52A2A>
                                             Brown
                                         </option>
-                                        <option value="#DEB887">
+                                        <option value=#DEB887>
                                             BurlyWood
                                         </option>
-                                        <option value="#5F9EA0">
+                                        <option value=#5F9EA0>
                                             CadetBlue
                                         </option>
-                                        <option value="#7FFF00">
+                                        <option value=#7FFF00>
                                             Chartreuse
                                         </option>
-                                        <option value="#D2691E">
+                                        <option value=#D2691E>
                                             Chocolate
                                         </option>
-                                        <option value="#FF7F50">
+                                        <option value=#FF7F50>
                                             Coral
                                         </option>
-                                        <option value="#6495ED">
+                                        <option value=#6495ED>
                                             CornflowerBlue
                                         </option>
-                                        <option value="#FFF8DC">
+                                        <option value=#FFF8DC>
                                             Cornsilk
                                         </option>
-                                        <option value="#DC143C">
+                                        <option value=#DC143C>
                                             Crimson
                                         </option>
-                                        <option value="#00FFFF">
+                                        <option value=#00FFFF>
                                             Cyan
                                         </option>
-                                        <option value="#00008B">
+                                        <option value=#00008B>
                                             DarkBlue
                                         </option>
-                                        <option value="#008B8B">
+                                        <option value=#008B8B>
                                             DarkCyan
                                         </option>
-                                        <option value="#B8860B">
+                                        <option value=#B8860B>
                                             DarkGoldenrod
                                         </option>
-                                        <option value="#A9A9A9">
+                                        <option value=#A9A9A9>
                                             DarkGray
                                         </option>
-                                        <option value="#006400">
+                                        <option value=#006400>
                                             DarkGreen
                                         </option>
-                                        <option value="#BDB76B">
+                                        <option value=#BDB76B>
                                             DarkKhaki
                                         </option>
-                                        <option value="#8B008B">
+                                        <option value=#8B008B>
                                             DarkMagenta
                                         </option>
-                                        <option value="#556B2F">
+                                        <option value=#556B2F>
                                             DarkOliveGreen
                                         </option>
-                                        <option value="#FF8C00">
+                                        <option value=#FF8C00>
                                             DarkOrange
                                         </option>
-                                        <option value="#9932CC">
+                                        <option value=#9932CC>
                                             DarkOrchid
                                         </option>
-                                        <option value="#8B0000">
+                                        <option value=#8B0000>
                                             DarkRed
                                         </option>
-                                        <option value="#E9967A">
+                                        <option value=#E9967A>
                                             DarkSalmon
                                         </option>
-                                        <option value="#8FBC8F">
+                                        <option value=#8FBC8F>
                                             DarkSeaGreen
                                         </option>
-                                        <option value="#483D8B">
+                                        <option value=#483D8B>
                                             DarkSlateBlue
                                         </option>
-                                        <option value="#2F4F4F">
+                                        <option value=#2F4F4F>
                                             DarkSlateGray
                                         </option>
-                                        <option value="#00CED1">
+                                        <option value=#00CED1>
                                             DarkTurquoise
                                         </option>
-                                        <option value="#9400D3">
+                                        <option value=#9400D3>
                                             DarkViolet
                                         </option>
-                                        <option value="#FF1493">
+                                        <option value=#FF1493>
                                             DeepPink
                                         </option>
-                                        <option value="#00BFFF">
+                                        <option value=#00BFFF>
                                             DeepSkyBlue
                                         </option>
-                                        <option value="#696969">
+                                        <option value=#696969>
                                             DimGray
                                         </option>
-                                        <option value="#1E90FF">
+                                        <option value=#1E90FF>
                                             DodgerBlue
                                         </option>
-                                        <option value="#B22222">
+                                        <option value=#B22222>
                                             FireBrick
                                         </option>
-                                        <option value="#FFFAF0">
+                                        <option value=#FFFAF0>
                                             FloralWhite
                                         </option>
-                                        <option value="#228B22">
+                                        <option value=#228B22>
                                             ForestGreen
                                         </option>
-                                        <option value="#FF00FF">
+                                        <option value=#FF00FF>
                                             Fuchsia
                                         </option>
-                                        <option value="#DCDCDC">
+                                        <option value=#DCDCDC>
                                             Gainsboro
                                         </option>
-                                        <option value="#F8F8FF">
+                                        <option value=#F8F8FF>
                                             GhostWhite
                                         </option>
-                                        <option value="#FFD700">
+                                        <option value=#FFD700>
                                             Gold
                                         </option>
-                                        <option value="#DAA520">
+                                        <option value=#DAA520>
                                             Goldenrod
                                         </option>
-                                        <option value="#808080">
+                                        <option value=#808080>
                                             Gray
                                         </option>
-                                        <option value="#008000">
+                                        <option value=#008000>
                                             Green
                                         </option>
-                                        <option value="#ADFF2F">
+                                        <option value=#ADFF2F>
                                             GreenYellow
                                         </option>
-                                        <option value="#F0FFF0">
+                                        <option value=#F0FFF0>
                                             Honeydew
                                         </option>
-                                        <option value="#FF69B4">
+                                        <option value=#FF69B4>
                                             HotPink
                                         </option>
-                                        <option value="#CD5C5C">
+                                        <option value=#CD5C5C>
                                             IndianRed
                                         </option>
-                                        <option value="#4B0082">
+                                        <option value=#4B0082>
                                             Indigo
                                         </option>
-                                        <option value="#FFFFF0">
+                                        <option value=#FFFFF0>
                                             Ivory
                                         </option>
-                                        <option value="#F0E68C">
+                                        <option value=#F0E68C>
                                             Khaki
                                         </option>
-                                        <option value="#E6E6FA">
+                                        <option value=#E6E6FA>
                                             Lavender
                                         </option>
-                                        <option value="#FFF0F5">
+                                        <option value=#FFF0F5>
                                             LavenderBlush
                                         </option>
-                                        <option value="#7CFC00">
+                                        <option value=#7CFC00>
                                             LawnGreen
                                         </option>
-                                        <option value="#FFFACD">
+                                        <option value=#FFFACD>
                                             LemonChiffon
                                         </option>
-                                        <option value="#ADD8E6">
+                                        <option value=#ADD8E6>
                                             LightBlue
                                         </option>
-                                        <option value="#F08080">
+                                        <option value=#F08080>
                                             LightCoral
                                         </option>
-                                        <option value="#E0FFFF">
+                                        <option value=#E0FFFF>
                                             LightCyan
                                         </option>
-                                        <option value="#FAFAD2">
+                                        <option value=#FAFAD2>
                                             LightGoldenrodYellow
                                         </option>
-                                        <option value="#90EE90">
+                                        <option value=#90EE90>
                                             LightGreen
                                         </option>
-                                        <option value="#D3D3D3">
+                                        <option value=#D3D3D3>
                                             LightGrey
                                         </option>
-                                        <option value="#FFB6C1">
+                                        <option value=#FFB6C1>
                                             LightPink
                                         </option>
-                                        <option value="#FFA07A">
+                                        <option value=#FFA07A>
                                             LightSalmon
                                         </option>
-                                        <option value="#FFA07A">
+                                        <option value=#FFA07A>
                                             LightSalmon
                                         </option>
-                                        <option value="#20B2AA">
+                                        <option value=#20B2AA>
                                             LightSeaGreen
                                         </option>
-                                        <option value="#87CEFA">
+                                        <option value=#87CEFA>
                                             LightSkyBlue
                                         </option>
-                                        <option value="#778899">
+                                        <option value=#778899>
                                             LightSlateGray
                                         </option>
-                                        <option value="#B0C4DE">
+                                        <option value=#B0C4DE>
                                             LightSteelBlue
                                         </option>
-                                        <option value="#FFFFE0">
+                                        <option value=#FFFFE0>
                                             LightYellow
                                         </option>
-                                        <option value="#00FF00">
+                                        <option value=#00FF00>
                                             Lime
                                         </option>
-                                        <option value="#32CD32">
+                                        <option value=#32CD32>
                                             LimeGreen
                                         </option>
-                                        <option value="#FAF0E6">
+                                        <option value=#FAF0E6>
                                             Linen
                                         </option>
-                                        <option value="#FF00FF">
+                                        <option value=#FF00FF>
                                             Magenta
                                         </option>
-                                        <option value="#800000">
+                                        <option value=#800000>
                                             Maroon
                                         </option>
-                                        <option value="#66CDAA">
+                                        <option value=#66CDAA>
                                             MediumAquamarine
                                         </option>
-                                        <option value="#0000CD">
+                                        <option value=#0000CD>
                                             MediumBlue
                                         </option>
-                                        <option value="#BA55D3">
+                                        <option value=#BA55D3>
                                             MediumOrchid
                                         </option>
-                                        <option value="#9370DB">
+                                        <option value=#9370DB>
                                             MediumPurple
                                         </option>
-                                        <option value="#3CB371">
+                                        <option value=#3CB371>
                                             MediumSeaGreen
                                         </option>
-                                        <option value="#7B68EE">
+                                        <option value=#7B68EE>
                                             MediumSlateBlue
                                         </option>
-                                        <option value="#7B68EE">
+                                        <option value=#7B68EE>
                                             MediumSlateBlue
                                         </option>
-                                        <option value="#00FA9A">
+                                        <option value=#00FA9A>
                                             MediumSpringGreen
                                         </option>
-                                        <option value="#48D1CC">
+                                        <option value=#48D1CC>
                                             MediumTurquoise
                                         </option>
-                                        <option value="#C71585">
+                                        <option value=#C71585>
                                             MediumVioletRed
                                         </option>
-                                        <option value="#191970">
+                                        <option value=#191970>
                                             MidnightBlue
                                         </option>
-                                        <option value="#F5FFFA">
+                                        <option value=#F5FFFA>
                                             MintCream
                                         </option>
-                                        <option value="#FFE4E1">
+                                        <option value=#FFE4E1>
                                             MistyRose
                                         </option>
-                                        <option value="#FFE4B5">
+                                        <option value=#FFE4B5>
                                             Moccasin
                                         </option>
-                                        <option value="#FFDEAD">
+                                        <option value=#FFDEAD>
                                             NavajoWhite
                                         </option>
-                                        <option value="#000080">
+                                        <option value=#000080>
                                             Navy
                                         </option>
-                                        <option value="#FDF5E6">
+                                        <option value=#FDF5E6>
                                             OldLace
                                         </option>
-                                        <option value="#808000">
+                                        <option value=#808000>
                                             Olive
                                         </option>
-                                        <option value="#6B8E23">
+                                        <option value=#6B8E23>
                                             OliveDrab
                                         </option>
-                                        <option value="#FFA500">
+                                        <option value=#FFA500>
                                             Orange
                                         </option>
-                                        <option value="#FF4500">
+                                        <option value=#FF4500>
                                             OrangeRed
                                         </option>
-                                        <option value="#DA70D6">
+                                        <option value=#DA70D6>
                                             Orchid
                                         </option>
-                                        <option value="#EEE8AA">
+                                        <option value=#EEE8AA>
                                             PaleGoldenrod
                                         </option>
-                                        <option value="#98FB98">
+                                        <option value=#98FB98>
                                             PaleGreen
                                         </option>
-                                        <option value="#AFEEEE">
+                                        <option value=#AFEEEE>
                                             PaleTurquoise
                                         </option>
-                                        <option value="#DB7093">
+                                        <option value=#DB7093>
                                             PaleVioletRed
                                         </option>
-                                        <option value="#FFEFD5">
+                                        <option value=#FFEFD5>
                                             PapayaWhip
                                         </option>
-                                        <option value="#FFDAB9">
+                                        <option value=#FFDAB9>
                                             PeachPuff
                                         </option>
-                                        <option value="#CD853F">
+                                        <option value=#CD853F>
                                             Peru
                                         </option>
-                                        <option value="#FFC0CB">
+                                        <option value=#FFC0CB>
                                             Pink
                                         </option>
-                                        <option value="#DDA0DD">
+                                        <option value=#DDA0DD>
                                             Plum
                                         </option>
-                                        <option value="#B0E0E6">
+                                        <option value=#B0E0E6>
                                             PowderBlue
                                         </option>
-                                        <option value="#800080">
+                                        <option value=#800080>
                                             Purple
                                         </option>
-                                        <option value="#FF0000">
+                                        <option value=#FF0000>
                                             Red
                                         </option>
-                                        <option value="#BC8F8F">
+                                        <option value=#BC8F8F>
                                             RosyBrown
                                         </option>
-                                        <option value="#4169E1">
+                                        <option value=#4169E1>
                                             RoyalBlue
                                         </option>
-                                        <option value="#8B4513">
+                                        <option value=#8B4513>
                                             SaddleBrown
                                         </option>
-                                        <option value="#FA8072">
+                                        <option value=#FA8072>
                                             Salmon
                                         </option>
-                                        <option value="#F4A460">
+                                        <option value=#F4A460>
                                             SandyBrown
                                         </option>
-                                        <option value="#2E8B57">
+                                        <option value=#2E8B57>
                                             SeaGreen
                                         </option>
-                                        <option value="#FFF5EE">
+                                        <option value=#FFF5EE>
                                             Seashell
                                         </option>
-                                        <option value="#A0522D">
+                                        <option value=#A0522D>
                                             Sienna
                                         </option>
-                                        <option value="#C0C0C0">
+                                        <option value=#C0C0C0>
                                             Silver
                                         </option>
-                                        <option value="#87CEEB">
+                                        <option value=#87CEEB>
                                             SkyBlue
                                         </option>
-                                        <option value="#6A5ACD">
+                                        <option value=#6A5ACD>
                                             SlateBlue
                                         </option>
-                                        <option value="#708090">
+                                        <option value=#708090>
                                             SlateGray
                                         </option>
-                                        <option value="#FFFAFA">
+                                        <option value=#FFFAFA>
                                             Snow
                                         </option>
-                                        <option value="#00FF7F">
+                                        <option value=#00FF7F>
                                             SpringGreen
                                         </option>
-                                        <option value="#4682B4">
+                                        <option value=#4682B4>
                                             SteelBlue
                                         </option>
-                                        <option value="#D2B48C">
+                                        <option value=#D2B48C>
                                             Tan
                                         </option>
-                                        <option value="#008080">
+                                        <option value=#008080>
                                             Teal
                                         </option>
-                                        <option value="#D8BFD8">
+                                        <option value=#D8BFD8>
                                             Thistle
                                         </option>
-                                        <option value="#FF6347">
+                                        <option value=#FF6347>
                                             Tomato
                                         </option>
-                                        <option value="#40E0D0">
+                                        <option value=#40E0D0>
                                             Turquoise
                                         </option>
-                                        <option value="#EE82EE">
+                                        <option value=#EE82EE>
                                             Violet
                                         </option>
-                                        <option value="#F5DEB3">
+                                        <option value=#F5DEB3>
                                             Wheat
                                         </option>
-                                        <option value="#FFFFFF">
+                                        <option value=#FFFFFF>
                                             White
                                         </option>
-                                        <option value="#F5F5F5">
+                                        <option value=#F5F5F5>
                                             WhiteSmoke
                                         </option>
-                                        <option value="#FFFF00">
+                                        <option value=#FFFF00>
                                             Yellow
                                         </option>
-                                        <option value="#9ACD32">
+                                        <option value=#9ACD32>
                                             YellowGreen
                                         </option>
                                     </select>
@@ -703,9 +699,7 @@
                                         Attributes :
                                     </label>
                                     <select class="form-control js-select2-custom" name="choice_attributes[]" id="choice_attributes" multiple="multiple">
-                                        <option value="1">
-                                            Size
-                                        </option>
+                                        <option value="1">Size</option>
                                     </select>
                                 </div>
                                 <div class="col-md-12 mt-2 mb-2">
@@ -725,37 +719,39 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label class="control-label">Unit price</label>
-                                    <input type="number" min="0" value="0" step="0.01" placeholder="Unit price" name="unit_price" value="" class="form-control" required>
+                                    <input type="number" min="0" step="0.01" placeholder="Unit price" name="unit_price" class="form-control" value=1000 required>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="control-label">Purchase price</label>
-                                    <input type="number" min="0" value="0" step="0.01" placeholder="Purchase price" name="purchase_price" value="" class="form-control" required>
+                                    <input type="number" min="0" step="0.01" placeholder="Purchase price" name="purchase_price" class="form-control" value=900 required>
                                 </div>
                             </div>
                             <div class="row pt-4">
                                 <div class="col-md-6">
                                     <label class="control-label">Tax</label>
                                     <label class="badge badge-info">Percent ( % )</label>
-                                    <input type="number" min="0" value="0" step="0.01" placeholder="Tax}" name="tax" value="" class="form-control">
+                                    <input type="number" min="0" value=2 step="0.01" placeholder="Tax" name="tax" class="form-control" required>
                                     <input name="tax_type" value="percent" style="display: none">
                                 </div>
                                 <div class="col-md-4">
                                     <label class="control-label">Discount</label>
-                                    <input type="number" min="0" value="0" step="0.01" placeholder="Discount" name="discount" value="" class="form-control">
+                                    <input type="number" min="0" value=10 step="0.01" placeholder="Discount" name="discount" class="form-control" required>
                                 </div>
                                 <div class="col-md-2" style="padding-top: 30px;">
                                     <select class="form-control js-select2-custom" name="discount_type">
-                                        <option value="flat">Flat</option>
                                         <option value="percent">Percent</option>
+                                        <option value="flat">Flat</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="sku_combination" id="sku_combination">
+                            <div class="sku_combination pt-4" id="sku_combination">
+                                </tbody>
+                                </table>
                             </div>
-                            <div class="row pt-4">
+                            <div class="row">
                                 <div class="col-md-6" id="quantity">
-                                    <label class="control-label">Total Quantity</label>
-                                    <input type="number" min="0" value="0" step="1" placeholder="Quantity" name="current_stock" value="" class="form-control" required>
+                                    <label class="control-label">Total Quantity </label>
+                                    <input type="number" min="0" value=999 step="1" placeholder="Quantity" name="current_stock" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -767,42 +763,56 @@
                             <div class="col-md-12 mb-4">
                                 <label class="control-label">Youtube video link</label>
                                 <small class="badge badge-soft-danger"> ( optional, please provide embed link not direct link. )</small>
-                                <input type="text" name="video_link" placeholder="EX : https://www.youtube.com/embed/5R06LRdUCSE" class="form-control" required>
+                                <input type="text" value="" name="video_link" placeholder="EX : https://www.youtube.com/embed/5R06LRdUCSE" class="form-control" required>
                             </div>
-                            <div class="card mt-2 rest-part">
-<div class="card-body">
-<div class="row">
-<div class="col-md-12 mb-4">
-<label class="control-label">Youtube video link</label>
-<small class="badge badge-soft-danger"> ( optional, please provide embed link not direct link. )</small>
-<input type="text" name="video_link" placeholder="EX : https://www.youtube.com/embed/5R06LRdUCSE" class="form-control" required="">
-</div>
-<div class="col-md-8">
-<div class="form-group">
-<label>Upload product images</label><small style="color: red">* ( ratio 1:1 )</small>
-</div>
-<div class="p-2 border border-dashed" style="max-width:430px;">
-<div class="row" id="coba"><div class="col-6 spartan_item_wrapper" data-spartanindexrow="0" style="margin-bottom : 20px; "><div style="position: relative;"><div class="spartan_item_loader" data-spartanindexloader="0" style=" position: absolute; width: 100%; height: auto; background: rgba(255,255,255, 0.7); z-index: 22; text-align: center; align-items: center; margin: auto; justify-content: center; flex-direction: column; display : none; font-size : 1.7em; color: #CECECE"><i class="fas fa-sync fa-spin"></i></div><label class="file_upload" style="width: 100%; height: auto; border: 2px dashed #ddd; border-radius: 3px; cursor: pointer; text-align: center; overflow: hidden; padding: 5px; margin-top: 5px; margin-bottom : 5px; position : relative; display: flex; align-items: center; margin: auto; justify-content: center; flex-direction: column;"><a href="javascript:void(0)" data-spartanindexremove="0" style="position: absolute !important; right : 3px; top: 3px; display : none; background : transparent; border-radius: 3px; width: 30px; height: 30px; line-height : 30px; text-align: center; text-decoration : none; color : #ff0700;" class="spartan_remove_row"><i class="tio-add-to-trash"></i></a><img style="width: 100%; margin: 0 auto; vertical-align: middle;" data-spartanindexi="0" src="https://demo.6amtech.com/6valley/public/assets/back-end/img/400x400/img2.jpg" class="spartan_image_placeholder"> <p data-spartanlbldropfile="0" style="color : #5FAAE1; display: none; width : auto; ">Drop Here</p><img style="width: 100%; vertical-align: middle; display:none;" class="img_" data-spartanindeximage="0"><input class="form-control spartan_image_input" accept="image/*" data-spartanindexinput="0" style="display : none" name="images[]" type="file"></label> </div></div></div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="form-group">
-<label for="name">Upload thumbnail</label><small style="color: red">* ( ratio 1:1 )</small>
-</div>
-<div style="max-width:200px;">
-<div class="row" id="thumbnail"><div class="col-12 spartan_item_wrapper" data-spartanindexrow="0" style="margin-bottom : 20px; "><div style="position: relative;"><div class="spartan_item_loader" data-spartanindexloader="0" style=" position: absolute; width: 100%; height: auto; background: rgba(255,255,255, 0.7); z-index: 22; text-align: center; align-items: center; margin: auto; justify-content: center; flex-direction: column; display : none; font-size : 1.7em; color: #CECECE"><i class="fas fa-sync fa-spin"></i></div><label class="file_upload" style="width: 100%; height: auto; border: 2px dashed #ddd; border-radius: 3px; cursor: pointer; text-align: center; overflow: hidden; padding: 5px; margin-top: 5px; margin-bottom : 5px; position : relative; display: flex; align-items: center; margin: auto; justify-content: center; flex-direction: column;"><a href="javascript:void(0)" data-spartanindexremove="0" style="position: absolute !important; right : 3px; top: 3px; display : none; background : transparent; border-radius: 3px; width: 30px; height: 30px; line-height : 30px; text-align: center; text-decoration : none; color : #ff0700;" class="spartan_remove_row"><i class="tio-add-to-trash"></i></a><img style="width: 100%; margin: 0 auto; vertical-align: middle;" data-spartanindexi="0" src="https://demo.6amtech.com/6valley/public/assets/back-end/img/400x400/img2.jpg" class="spartan_image_placeholder"> <p data-spartanlbldropfile="0" style="color : #5FAAE1; display: none; width : auto; ">Drop Here</p><img style="width: 100%; vertical-align: middle; display:none;" class="img_" data-spartanindeximage="0"><input class="form-control spartan_image_input" accept="image/*" data-spartanindexinput="0" style="display : none" name="image" type="file"></label> </div></div></div>
-</div>
-</div>
-</div>
-</div>
-</div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label>Upload product images</label><small style="color: red">* ( ratio 1:1 )</small>
+                                </div>
+                                <div class="p-2 border border-dashed" style="max-width:430px;">
+                                    <div class="row" id="coba">
+                                        <div class="col-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <img style="width: 100%" height="auto" onerror="this.src='https://demo.6amtech.com/6valley/public/assets/front-end/img/image-place-holder.png'" src="https://demo.6amtech.com/6valley/storage/app/public/product/2021-06-05-60bb200ef0156.png" alt="Product image">
+                                                    <a href="https://demo.6amtech.com/6valley/seller/product/remove-image?id=17&amp;name=2021-06-05-60bb200ef0156.png" class="btn btn-danger btn-block">Remove</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <img style="width: 100%" height="auto" onerror="this.src='https://demo.6amtech.com/6valley/public/assets/front-end/img/image-place-holder.png'" src="https://demo.6amtech.com/6valley/storage/app/public/product/2021-06-05-60bb200ef0d90.png" alt="Product image">
+                                                    <a href="https://demo.6amtech.com/6valley/seller/product/remove-image?id=17&amp;name=2021-06-05-60bb200ef0d90.png" class="btn btn-danger btn-block">Remove</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <img style="width: 100%" height="auto" onerror="this.src='https://demo.6amtech.com/6valley/public/assets/front-end/img/image-place-holder.png'" src="https://demo.6amtech.com/6valley/storage/app/public/product/2021-06-05-60bb200ef0f7c.png" alt="Product image">
+                                                    <a href="https://demo.6amtech.com/6valley/seller/product/remove-image?id=17&amp;name=2021-06-05-60bb200ef0f7c.png" class="btn btn-danger btn-block">Remove</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="name">Upload thumbnail</label><small style="color: red">* ( ratio 1:1 )</small>
+                                </div>
+                                <div style="max-width:200px;">
+                                    <div class="row" id="thumbnail"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="card card-footer">
                     <div class="row">
                         <div class="col-md-12" style="padding-top: 20px">
-                            <button type="button" onclick="check()" class="btn btn-primary">Submit</button>
+                            <button type="button" onclick="check()" class="btn btn-primary">Update</button>
                         </div>
                     </div>
                 </div>
@@ -811,33 +821,6 @@
     </div>
 </div>
 
-
-<div class="footer">
-    <div class="row justify-content-between align-items-center">
-        <div class="col">
-        </div>
-        <div class="col-auto">
-            <div class="d-flex justify-content-end">
-
-                <ul class="list-inline list-separator">
-                    <span>Copyright &copy; https://demo.6amtech.com/6valley 2021</span>
-                </ul>
-
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END: Content-->
-
-<div class="sidenav-overlay"></div>
-<div class="drag-target"></div>
-
-<!-- BEGIN: Footer-->
-<footer class="footer footer-static footer-light">
-    <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2019<a class="text-bold-800 grey darken-2" href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">Pixinvent,</a>All rights Reserved</span><span class="float-md-right d-none d-md-block">Hand-crafted & Made with<i class="feather icon-heart pink"></i></span>
-        <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="feather icon-arrow-up"></i></button>
-    </p>
-</footer>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://demo.6amtech.com/6valley/public/assets/back-end/js/custom.js"></script>
 
 <script src="https://demo.6amtech.com/6valley/public/assets/back-end/js/tags-input.min.js"></script>
