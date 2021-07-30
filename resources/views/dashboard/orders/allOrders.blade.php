@@ -112,11 +112,11 @@
                             </td>
                             <td>
                             <div class="btn-group">
-  <button type="button" class="btn btn-primary dropdown-toggle btn mr-1 mb-1 btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+  <button type="button" class="btn btn-primary dropdown-toggle btn mr-1 mb-1 btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" >
     Action
   </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href='/dashboard-orderview'>View</a>
+  <div class="dropdown-menu" >
+    <a class="dropdown-item" href='/dashboard-orderview' >View</a>
     <a class="dropdown-item" href="#">invoice</a>
   </div>
 </div>
@@ -199,8 +199,8 @@
   <button type="button" class="btn btn-primary dropdown-toggle btn mr-1 mb-1 btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
     Action
   </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href='/dashboard-orderview'>View</a>
+  <div class="dropdown-menu" >
+    <a class="dropdown-item" href='/dashboard-orderview' >View</a>
     <a class="dropdown-item" href="#">invoice</a>
   </div>
 </div>

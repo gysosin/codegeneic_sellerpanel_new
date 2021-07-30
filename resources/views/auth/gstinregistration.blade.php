@@ -20,10 +20,10 @@
                                     <div class="card rounded-0 mb-0 p-2">
                                         <div class="card-header pt-50 pb-1">
                                             <div class="card-title">
-                                                <h4 class="mb-0">Create Account</h4>
+                                                <h4 class="mb-0">Registration</h4>
                                             </div>
                                         </div>
-                                        <p class="px-2">Fill the below form to create a new account.</p>
+                                        <p class="px-2">Fill the below form to create a new account</p>
                                         <div class="card-content">
                                             <div class="card-body pt-0">
                                                 <form action="index.html">
@@ -50,7 +50,7 @@
 
 
                                                     <a href='/login' class="btn btn-outline-primary float-left btn-inline mb-50">Login</a>
-                                                    <button type="submit" class="btn btn-primary float-right btn-inline mb-50">Next</a>
+                                                    <button type="submit" class="btn btn-primary float-right btn-inline mb-50"><a href='/gstin2register' style="color: white;">Next</a></button>
                                                 </form>
                                             </div>
                                         </div>

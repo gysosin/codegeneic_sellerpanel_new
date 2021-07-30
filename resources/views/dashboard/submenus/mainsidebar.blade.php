@@ -123,6 +123,7 @@
                 <li><a href='/dashboard-contactissue'><i class="fa fa-exclamation-triangle"></i><span class="menu-item" data-i18n="Switch">Contact Issue</span></a>
                 </li>
                
+               
             </ul>
         </div>
     </div>

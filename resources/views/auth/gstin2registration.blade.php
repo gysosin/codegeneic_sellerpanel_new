@@ -20,10 +20,10 @@
                                     <div class="card rounded-0 mb-0 p-2">
                                         <div class="card-header pt-50 pb-1">
                                             <div class="card-title">
-                                                <h4 class="mb-0">Create Account</h4>
+                                                <h4 class="mb-0">Registration</h4>
                                             </div>
                                         </div>
-                                        <p class="px-2">Fill the below form to create a new account.</p>
+                                        <p class="px-2">Fill the below form to create a new account</p>
                                         <div class="card-content">
                                             <div class="card-body pt-0">
                                                 <form action="index.html">
@@ -32,7 +32,7 @@
                                                         <label for="">GSTIN number</label>
                                                     </div>
                                                     <div class="form-label-group">
-                                                        <input type="email" id="" class="form-control" placeholder="State" required>
+                                                        <input type="text" id="" class="form-control" placeholder="State" required>
                                                         <label for="">state</label>
                                                     </div>
                                                     <div class="form-label-group">
@@ -53,7 +53,7 @@
 
 
 
-                                        <button type="submit" class="btn btn-primary float-right btn-inline mb-50">submit and forward to upload documents</a>
+                                        <button type="" class="btn btn-primary float-right btn-inline mb-50"><a href='/gstin3register' style="color: white;">submit and forward to upload documents</a></button>
                                             </form>
                                     </div>
                                 </div>

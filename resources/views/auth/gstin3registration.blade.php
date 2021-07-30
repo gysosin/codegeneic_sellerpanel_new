@@ -20,7 +20,7 @@
                                     <div class="card rounded-0 mb-0 p-2">
                                         <div class="card-header pt-50 pb-1">
                                             <div class="card-title">
-                                                <h4 class="mb-0">Create Account</h4>
+                                                <h4 class="mb-0">Registration</h4>
                                             </div>
                                         </div>
                                         <p class="px-2">Fill the below form to create a new account.</p><br><br>

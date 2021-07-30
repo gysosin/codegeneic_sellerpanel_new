@@ -27,7 +27,7 @@
                         </li>
                         <li class=" nav-item"><a href='/dashboard-deliveredorders'><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Delivered</span></a>
                         </li>
-                        <li class=" nav-item"><a href='/dashboard-returnorders'><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Returned</span></a>
+                        <li class=" nav-item"><a href='/dashboard-returnedorders'><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Returned</span></a>
                         </li>
                         <li class=" nav-item"><a href='/dashboard-failedorders'><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">Failed</span></a>
                         </li>
@@ -78,7 +78,6 @@
                 </li>
                 <li><a href='/dashboard-contactissue'><i class="fa fa-exclamation-triangle"></i><span class="menu-item" data-i18n="Switch">Contact Issue</span></a>
                 </li>
-
             </ul>
         </div>
     </div>

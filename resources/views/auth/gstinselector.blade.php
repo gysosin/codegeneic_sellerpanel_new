@@ -18,17 +18,13 @@
                                 </div>
                                 <div class="col-lg-6 col-12 p-0">
                                     <div class="card rounded-0 mb-0 p-2">
-                                        <div class="card-header pt-50 pb-1">
-                                            <div class="card-title">
-                                                <h4 class="mb-0">Create Account</h4>
-                                            </div>
-                                        </div>
+                                       
                                         <p class="px-2">Please select one option to continue</p>
                                         <div class="card-content">
                                             <div class="card-body pt-0">
                                                 <center>
                                                     <button type="button" class="btn btn-success"><a href='/gstinregister' style="color: white;">if GSTIN Availible then click here</a></button><br><br>
-                                                    <button type="button" class="btn btn-primary" ><a href='/register' style="color: white;">if GSTIN is not Availible then click here</a></button>
+                                                    <button type="button" class="btn btn-primary"><a href='/register' style="color: white;">if GSTIN is not Availible then click here</a></button>
                                                 </center>
                                             </div>
                                         </div>

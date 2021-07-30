@@ -69,9 +69,9 @@
                                             </div>
                                             <div class="footer-btn d-inline">
                                                 <a href="#" class="btn btn-facebook"><span class="fa fa-facebook"></span></a>
-                                                <a href="#" class="btn btn-twitter white"><spanF class="fa fa-twitter"></span></a>
+                                                </a>
                                                 <a href="#" class="btn btn-google"><span class="fa fa-google"></span></a>
-                                                <a href="#" class="btn btn-github"><span class="fa fa-github-alt"></span></a>
+                                                <button type="" class="btn btn-primary float-right btn-inline"><a href='/' style="color: white;">Dashboard demo</a></button>
                                             </div>
                                         </div>
                                     </div>
