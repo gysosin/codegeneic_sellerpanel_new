@@ -50,7 +50,7 @@
 
 
 
-                                                    <button type="submit" class="btn btn-primary float-right btn-inline mb-50">Submit and Register</a>
+                                                    <button type="" class="btn btn-primary float-right btn-inline mb-50">Submit and Register</a>
                                                 </form>
                                             </div>
                                         </div>

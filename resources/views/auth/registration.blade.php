@@ -49,7 +49,7 @@
                                                     </div>
                                                    
                                                     <a href='/login' class="btn btn-outline-primary float-left btn-inline mb-50">Login</a>
-                                                    <button href='' type="" class="btn btn-primary float-right btn-inline mb-50"><a href='/2register' style="color: white;">Next</a></button>
+                                                    <button  class="btn btn-primary float-right btn-inline mb-50"><a href='/2register' style="color: white;">Next</a></button>
                                                 </form>
                                             </div>
                                         </div>
