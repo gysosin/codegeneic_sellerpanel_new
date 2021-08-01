@@ -2,7 +2,6 @@
 <!-- BEGIN Vendor JS-->
 
 <!-- BEGIN: Page Vendor JS-->
-<script src="{{ url('/app-assets/vendors/js/charts/apexcharts.min.js') }}"></script>
 <!-- END: Page Vendor JS-->
 <script src="{{ url('/app-assets/vendors/js/tables/datatable/datatables.min.js') }}"></script>
 <script src="{{ url('/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js') }}"></script>
@@ -11,6 +10,5 @@
 <script src="{{ url('/app-assets/js/core/app-menu.js') }}"></script>
 <script src="{{ url('/app-assets/js/core/app.js') }}"></script>
 <script src="{{ url('/app-assets/js/scripts/components.js') }}"></script>
-<!-- END: Theme JS-->
-<script src="{{ url('/app-assets/js/scripts/pages/app-chat.js') }}"></script>
+
 <!-- BEGIN: Page JS-->

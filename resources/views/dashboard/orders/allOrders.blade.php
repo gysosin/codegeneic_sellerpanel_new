@@ -44,7 +44,7 @@
                                 Manage
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton101" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-                                <a class="dropdown-item" href="#">View</a>
+                                <a class="dropdown-item" href='/dashboard-orderview'>View</a>
                                 <a class="dropdown-item" href="#">Invoice</a>
 
                             </div>
@@ -76,7 +76,7 @@
                                 Manage
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton101" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-                                <a class="dropdown-item" href="#">View</a>
+                                <a class="dropdown-item" href='/dashboard-orderview'>View</a>
                                 <a class="dropdown-item" href="#">Invoice</a>
 
                             </div>
@@ -108,7 +108,7 @@
                                 Manage
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton101" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-                                <a class="dropdown-item" href="#">View</a>
+                                <a class="dropdown-item" href='/dashboard-orderview'>View</a>
                                 <a class="dropdown-item" href="#">Invoice</a>
 
                             </div>
@@ -140,7 +140,7 @@
                                 Manage
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton101" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-                                <a class="dropdown-item" href="#">View</a>
+                                <a class="dropdown-item" href='/dashboard-orderview'>View</a>
                                 <a class="dropdown-item" href="#">Invoice</a>
 
                             </div>
@@ -172,7 +172,7 @@
                                 Manage
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton101" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-                                <a class="dropdown-item" href="#">View</a>
+                                <a class="dropdown-item" href='/dashboard-orderview'>View</a>
                                 <a class="dropdown-item" href="#">Invoice</a>
 
                             </div>

@@ -1,678 +1,210 @@
 @extends('layouts.master')
 @section('title', 'dashboard')
-<link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/extensions/toastr.css">
-    <!-- END: Vendor CSS-->
-
-    <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap-extended.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/colors.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/components.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/dark-layout.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/semi-dark-layout.css">
-
-    <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/colors/palette-gradient.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/pages/app-ecommerce-shop.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/forms/wizard.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/extensions/toastr.css">
-    <!-- END: Page CSS-->
-
-    <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
-    <!-- END: Custom CSS-->
-
+<link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/datatables.min.css">
 @section('body')
+<div class="col-12">
+    <div class="profile-header mb-2">
+        <div class="relative">
 
-
-
-<body class="vertical-layout vertical-menu-modern semi-dark-layout 2-columns ecommerce-application navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="semi-dark-layout">
-
-        <!-- END: Header-->
-
-        <div class="content-wrapper">
-            <div class="content-header row">
-                <div class="content-header-left col-md-9 col-12 mb-2">
-                    <div class="row breadcrumbs-top">
-                        <div class="col-12">
-                            <h2 class="content-header-title float-left mb-0">Checkout</h2>
-                            <div class="breadcrumb-wrapper col-12">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
-                                    </li>
-                                    <li class="breadcrumb-item"><a href="#">eCommerce</a>
-                                    </li>
-                                    <li class="breadcrumb-item active">Checkout
-                                    </li>
-                                </ol>
+            <div class="profile-img-container d-flex align-items-center justify-content-left">
+                <img src="../../../app-assets/images/camera.jfif" class="" alt="Card image">
+                <div class="card col-12">
+                    <div class="card-header">
+                        <h4>Product Name</h4>
+                        <i class="feather icon-more-horizontal cursor-pointer"></i>
+                    </div>
+                    <div class="card-body col-12">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id fuga molestiae provident beatae dignissimos dolor, ratione culpa magnam ad ea molestias libero nobis sapiente? Quibusdam illum minima cupiditate nostrum qui?</p>
+                        <div class="mt-1">
+                            <h5 class="mb-0">Rating </h5><br>
+                            <div class="item-rating">
+                                <div class="badge badge-primary badge-md">
+                                    4 <i class="feather icon-star ml-25"></i>
+                                </div>
                             </div>
+
                         </div>
-                    </div>
-                </div>
-                <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
-                    <div class="form-group breadcrum-right">
-                        <div class="dropdown">
-                            <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="feather icon-settings"></i></button>
-                            <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Chat</a><a class="dropdown-item" href="#">Email</a><a class="dropdown-item" href="#">Calendar</a></div>
+                        <div class="mt-1">
+                            <h5 class="mb-0">Price</h5>
+                            <p>1000 inr</p>
                         </div>
+                        <div class="mt-1">
+                            <h5 class="mb-0">Discount</h5>
+                            <p>7%</p>
+                        </div>
+                        <div class="mt-1">
+                            <h5 class="mb-0">Current stock</h5>
+                            <p>999</p>
+                        </div>
+
                     </div>
+
                 </div>
             </div>
-            <div class="content-body">
-                <form action="#" class="icons-tab-steps checkout-tab-steps wizard-circle">
-                    <!-- Checkout Place order starts -->
-                    <h6><i class="step-icon step feather icon-shopping-cart"></i>Cart</h6>
-                    <fieldset class="checkout-step-1 px-0">
-                        <section id="place-order" class="list-view product-checkout">
-                            <div class="checkout-items">
-                                <div class="card ecommerce-card">
-                                    <div class="card-content">
-                                        <div class="item-img text-center">
-                                            <img src="../../../app-assets/images/pages/eCommerce/9.png" alt="img-placeholder">
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="item-name">
-                                                <span>Amazon - Fire TV Stick with Alexa Voice Remote - Black</span>
-                                                <p class="item-company">By <span class="company-name">Amazon</span></p>
-                                                <p class="stock-status-in">In Stock</p>
-                                            </div>
-                                            <div class="item-quantity">
-                                                <p class="quantity-title">Quantity</p>
-                                                <div class="input-group quantity-counter-wrapper">
-                                                    <input type="text" class="quantity-counter" value="1">
-                                                </div>
-                                            </div>
-                                            <p class="delivery-date">Delivery by, Wed Apr 25</p>
-                                            <p class="offers">17% off 4 offers Available</p>
-                                        </div>
-                                        <div class="item-options text-center">
-                                            <div class="item-wrapper">
-                                                <div class="item-rating">
-                                                    <div class="badge badge-primary badge-md">
-                                                        4 <i class="feather icon-star ml-25"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="item-cost">
-                                                    <h6 class="item-price">
-                                                        $39.99
-                                                    </h6>
-                                                    <p class="shipping">
-                                                        <i class="feather icon-shopping-cart"></i> Free Shipping
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="wishlist remove-wishlist">
-                                                <i class="feather icon-x align-middle"></i> Remove
-                                            </div>
-                                            <div class="cart remove-wishlist">
-                                                <i class="fa fa-heart-o mr-25"></i> Wishlist
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card ecommerce-card">
-                                    <div class="card-content">
-                                        <div class="item-img text-center">
-                                            <img src="../../../app-assets/images/pages/eCommerce/2.png" alt="img-placeholder">
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="item-name">
-                                                <span>Apple - Macbook® - Intel Core M5</span>
-                                                <p class="item-company">By <span class="company-name">Apple</span></p>
-                                                <p class="stock-status-in">In Stock</p>
-                                            </div>
-                                            <div class="item-quantity">
-                                                <p class="quantity-title">Quantity</p>
-                                                <div class="input-group quantity-counter-wrapper">
-                                                    <input type="text" class="quantity-counter" value="1">
-                                                </div>
-                                            </div>
-                                            <p class="delivery-date">Delivery by, Wed Apr 24</p>
-                                            <p class="offers">7% off 1 offers Available</p>
-                                        </div>
-                                        <div class="item-options text-center">
-                                            <div class="item-wrapper">
-                                                <div class="item-rating">
-                                                    <div class="badge badge-primary badge-md">
-                                                        4 <i class="feather icon-star ml-25"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="item-cost">
-                                                    <h6 class="item-price">
-                                                        $1599.99
-                                                    </h6>
-                                                    <p class="shipping">
-                                                        <i class="feather icon-shopping-cart"></i> Free Shipping
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="wishlist remove-wishlist">
-                                                <i class="feather icon-x align-middle"></i> Remove
-                                            </div>
-                                            <div class="cart remove-wishlist">
-                                                <i class="fa fa-heart-o mr-25"></i> Wishlist
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card ecommerce-card">
-                                    <div class="card-content">
-                                        <div class="item-img text-center">
-                                            <img src="../../../app-assets/images/pages/eCommerce/3.png" alt="img-placeholder">
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="item-name">
-                                                <span>Google - Chromecast - Black</span>
-                                                <p class="item-company">By <span class="company-name">Google</span></p>
-                                                <p class="stock-status-in">In Stock</p>
-                                            </div>
-                                            <div class="item-quantity">
-                                                <p class="quantity-title">Quantity</p>
-                                                <div class="input-group quantity-counter-wrapper">
-                                                    <input type="text" class="quantity-counter" value="1">
-                                                </div>
-                                            </div>
-                                            <p class="delivery-date">Delivery by, Wed Apr 27</p>
-                                            <p class="offers">3% off 1 offers Available</p>
-                                        </div>
-                                        <div class="item-options text-center">
-                                            <div class="item-wrapper">
-                                                <div class="item-rating">
-                                                    <div class="badge badge-primary badge-md">
-                                                        4 <i class="feather icon-star ml-25"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="item-cost">
-                                                    <h6 class="item-price">
-                                                        $35
-                                                    </h6>
-                                                </div>
-                                            </div>
-                                            <div class="wishlist remove-wishlist">
-                                                <i class="feather icon-x align-middle"></i> Remove
-                                            </div>
-                                            <div class="cart remove-wishlist">
-                                                <i class="fa fa-heart-o mr-25"></i> Wishlist
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card ecommerce-card">
-                                    <div class="card-content">
-                                        <div class="item-img text-center">
-                                            <img src="../../../app-assets/images/pages/eCommerce/4.png" alt="img-placeholder">
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="item-name">
-                                                <span>Sharp - 50" Class (49.5" Diag.) - LED - 1080p - Black</span>
-                                                <p class="item-company">By <span class="company-name">Sharp</span></p>
-                                                <p class="stock-status-in">In Stock</p>
-                                            </div>
-                                            <div class="item-quantity">
-                                                <p class="quantity-title">Quantity</p>
-                                                <div class="input-group quantity-counter-wrapper">
-                                                    <input type="text" class="quantity-counter" value="1">
-                                                </div>
-                                            </div>
-                                            <p class="delivery-date">Delivery by, Wed Apr 29</p>
-                                            <p class="offers">5% off 2 offers Available</p>
-                                        </div>
-                                        <div class="item-options text-center">
-                                            <div class="item-wrapper">
-                                                <div class="item-rating">
-                                                    <div class="badge badge-primary badge-md">
-                                                        4 <i class="feather icon-star ml-25"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="item-cost">
-                                                    <h6 class="item-price">
-                                                        $429.99
-                                                    </h6>
-                                                    <p class="shipping">
-                                                        <i class="feather icon-shopping-cart"></i> Free Shipping
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="wishlist remove-wishlist">
-                                                <i class="feather icon-x align-middle"></i> Remove
-                                            </div>
-                                            <div class="cart remove-wishlist">
-                                                <i class="fa fa-heart-o mr-25"></i> Wishlist
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card ecommerce-card">
-                                    <div class="card-content">
-                                        <div class="item-img text-center">
-                                            <img src="../../../app-assets/images/pages/eCommerce/10.png" alt="img-placeholder">
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="item-name">
-                                                <span>Dell - Inspiron 15.6" Touch-Screen Laptop - Black</span>
-                                                <p class="item-company">By <span class="company-name">Dell</span></p>
-                                                <p class="stock-status-in">In Stock</p>
-                                            </div>
-                                            <div class="item-quantity">
-                                                <p class="quantity-title">Quantity</p>
-                                                <div class="input-group quantity-counter-wrapper">
-                                                    <input type="text" class="quantity-counter" value="1">
-                                                </div>
-                                            </div>
-                                            <p class="delivery-date">Delivery by, Wed Apr 30</p>
-                                            <p class="offers">3% off 1 offers Available</p>
-                                        </div>
-                                        <div class="item-options text-center">
-                                            <div class="item-wrapper">
-                                                <div class="item-rating">
-                                                    <div class="badge badge-primary badge-md">
-                                                        4 <i class="feather icon-star ml-25"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="item-cost">
-                                                    <h6 class="item-price">
-                                                        $499.99
-                                                    </h6>
-                                                    <p class="shipping">
-                                                        <i class="feather icon-shopping-cart"></i> Free Shipping
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="wishlist remove-wishlist">
-                                                <i class="feather icon-x align-middle"></i> Remove
-                                            </div>
-                                            <div class="cart remove-wishlist">
-                                                <i class="fa fa-heart-o mr-25"></i> Wishlist
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card ecommerce-card">
-                                    <div class="card-content">
-                                        <div class="item-img text-center">
-                                            <img src="../../../app-assets/images/pages/eCommerce/6.png" alt="img-placeholder">
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="item-name">
-                                                <span>Amazon - Echo Dot</span>
-                                                <p class="item-company">By <span class="company-name">Amazon</span></p>
-                                                <p class="stock-status-in">In Stock</p>
-                                            </div>
-                                            <div class="item-quantity">
-                                                <p class="quantity-title">Quantity</p>
-                                                <div class="input-group quantity-counter-wrapper">
-                                                    <input type="text" class="quantity-counter" value="1">
-                                                </div>
-                                            </div>
-                                            <p class="delivery-date">Delivery by, Wed Apr 30</p>
-                                            <p class="offers">6% off 3 offers Available</p>
-                                        </div>
-                                        <div class="item-options text-center">
-                                            <div class="item-wrapper">
-                                                <div class="item-rating">
-                                                    <div class="badge badge-primary badge-md">
-                                                        4 <i class="feather icon-star ml-25"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="item-cost">
-                                                    <h6 class="item-price">
-                                                        $49.99
-                                                    </h6>
-                                                </div>
-                                            </div>
-                                            <div class="wishlist remove-wishlist">
-                                                <i class="feather icon-x align-middle"></i> Remove
-                                            </div>
-                                            <div class="cart remove-wishlist">
-                                                <i class="fa fa-heart-o mr-25"></i> Wishlist
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="checkout-options">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <p class="options-title">Options</p>
-                                            <div class="coupons">
-                                                <div class="coupons-title">
-                                                    <p>Coupons</p>
-                                                </div>
-                                                <div class="apply-coupon">
-                                                    <p>Apply</p>
-                                                </div>
-                                            </div>
-                                            <hr>
-                                            <div class="price-details">
-                                                <p>Price Details</p>
-                                            </div>
-                                            <div class="detail">
-                                                <div class="detail-title">
-                                                    Total MRP
-                                                </div>
-                                                <div class="detail-amt">
-                                                    $598
-                                                </div>
-                                            </div>
-                                            <div class="detail">
-                                                <div class="detail-title">
-                                                    Bag Discount
-                                                </div>
-                                                <div class="detail-amt discount-amt">
-                                                    -25$
-                                                </div>
-                                            </div>
-                                            <div class="detail">
-                                                <div class="detail-title">
-                                                    Estimated Tax
-                                                </div>
-                                                <div class="detail-amt">
-                                                    $1.3
-                                                </div>
-                                            </div>
-                                            <div class="detail">
-                                                <div class="detail-title">
-                                                    EMI Eligibility
-                                                </div>
-                                                <div class="detail-amt emi-details">
-                                                    Details
-                                                </div>
-                                            </div>
-                                            <div class="detail">
-                                                <div class="detail-title">
-                                                    Delivery Charges
-                                                </div>
-                                                <div class="detail-amt discount-amt">
-                                                    Free
-                                                </div>
-                                            </div>
-                                            <hr>
-                                            <div class="detail">
-                                                <div class="detail-title detail-total">Total</div>
-                                                <div class="detail-amt total-amt">$574</div>
-                                            </div>
-                                            <div class="btn btn-primary btn-block place-order">PLACE ORDER</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </fieldset>
-                    <!-- Checkout Place order Ends -->
+        </div>
 
-                    <!-- Checkout Customer Address Starts -->
-                    <h6><i class="step-icon step feather icon-home"></i>Address</h6>
-                    <fieldset class="checkout-step-2 px-0">
-                        <section id="checkout-address" class="list-view product-checkout">
-                            <div class="card">
-                                <div class="card-header flex-column align-items-start">
-                                    <h4 class="card-title">Add New Address</h4>
-                                    <p class="text-muted mt-25">Be sure to check "Deliver to this address" when you have finished</p>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label for="checkout-name">Full Name:</label>
-                                                    <input type="text" id="checkout-name" class="form-control required" name="fname">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label for="checkout-number">Mobile Number:</label>
-                                                    <input type="number" id="checkout-number" class="form-control required" name="mnumber">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label for="checkout-apt-number">Flat, House No:</label>
-                                                    <input type="number" id="checkout-apt-number" class="form-control required" name="apt-number">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label for="checkout-landmark">Landmark e.g. near apollo hospital:</label>
-                                                    <input type="text" id="checkout-landmark" class="form-control required" name="landmark">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label for="checkout-city">Town/City:</label>
-                                                    <input type="text" id="checkout-city" class="form-control required" name="city">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label for="checkout-pincode">Pincode:</label>
-                                                    <input type="number" id="checkout-pincode" class="form-control required" name="pincode">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label for="checkout-state">State:</label>
-                                                    <input type="text" id="checkout-state" class="form-control required" name="state">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label for="add-type">Address Type:</label>
-                                                    <select class="form-control" id="add-type">
-                                                        <option>Home</option>
-                                                        <option>Work</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 offset-md-6">
-                                                <div class="btn btn-primary delivery-address float-right">
-                                                    SAVE AND DELIVER HERE
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="customer-card">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4 class="card-title">John Doe</h4>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="card-body actions">
-                                            <p class="mb-0">9447 Glen Eagles Drive</p>
-                                            <p>Lewis Center, OH 43035</p>
-                                            <p>UTC-5: Eastern Standard Time (EST) </p>
-                                            <p>202-555-0140</p>
-                                            <hr>
-                                            <div class="btn btn-primary btn-block delivery-address">DELIVER TO THIS ADDRESS</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </fieldset>
 
-                    <!-- Checkout Customer Address Ends -->
 
-                    <!-- Checkout Payment Starts -->
-                    <h6><i class="step-icon step feather icon-credit-card"></i>Payment</h6>
-                    <fieldset class="checkout-step-3 px-0">
-                        <section id="checkout-payment" class="list-view product-checkout">
-                            <div class="payment-type">
-                                <div class="card">
-                                    <div class="card-header flex-column align-items-start">
-                                        <h4 class="card-title">Payment options</h4>
-                                        <p class="text-muted mt-25">Be sure to click on correct payment option</p>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between flex-wrap">
-                                                <div class="vs-radio-con vs-radio-primary">
-                                                    <input type="radio" name="vueradio" checked="" value="false">
-                                                    <span class="vs-radio">
-                                                        <span class="vs-radio--border"></span>
-                                                        <span class="vs-radio--circle"></span>
-                                                    </span>
-                                                    <img src="../../../app-assets/images/pages/eCommerce/bank.png" alt="img-placeholder" height="40">
-                                                    <span>US Unlocked Debit Card 12XX XXXX XXXX 0000
-                                                    </span>
-                                                </div>
-                                                <div class="card-holder-name mt-75">
-                                                    John Doe
-                                                </div>
-                                                <div class="card-expiration-date mt-75">
-                                                    11/2020
-                                                </div>
-                                            </div>
-                                            <div class="customer-cvv mt-1">
-                                                <div class="form-inline">
-                                                    <label class="mb-50" for="card-holder-cvv">Enter CVV:</label>
-                                                    <input type="number" class="form-control ml-75 mb-50 input-cvv" id="card-holder-cvv">
-                                                    <div class="btn btn-primary btn-cvv ml-50 mb-50">Continue</div>
-                                                </div>
-                                            </div>
-                                            <hr class="my-2">
-                                            <ul class="other-payment-options list-unstyled">
-                                                <li>
-                                                    <div class="vs-radio-con vs-radio-primary py-25">
-                                                        <input type="radio" name="vueradio" value="false">
-                                                        <span class="vs-radio">
-                                                            <span class="vs-radio--border"></span>
-                                                            <span class="vs-radio--circle"></span>
-                                                        </span>
-                                                        <span>
-                                                            Credit / Debit / ATM Card
-                                                        </span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="vs-radio-con vs-radio-primary py-25">
-                                                        <input type="radio" name="vueradio" value="false">
-                                                        <span class="vs-radio">
-                                                            <span class="vs-radio--border"></span>
-                                                            <span class="vs-radio--circle"></span>
-                                                        </span>
-                                                        <span>
-                                                            Net Banking
-                                                        </span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="vs-radio-con vs-radio-primary py-25">
-                                                        <input type="radio" name="vueradio" value="false">
-                                                        <span class="vs-radio">
-                                                            <span class="vs-radio--border"></span>
-                                                            <span class="vs-radio--circle"></span>
-                                                        </span>
-                                                        <span>
-                                                            EMI (Easy Installment)
-                                                        </span>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="vs-radio-con vs-radio-primary py-25">
-                                                        <input type="radio" name="vueradio" value="false">
-                                                        <span class="vs-radio">
-                                                            <span class="vs-radio--border"></span>
-                                                            <span class="vs-radio--circle"></span>
-                                                        </span>
-                                                        <span>
-                                                            Cash On Delivery
-                                                        </span>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <hr>
-                                            <div class="gift-card">
-                                                <p><i class="feather icon-plus-square mr-25 font-medium-5"></i>
-                                                    Add Gift Card
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Customer Reviews</h4>
+    </div>
+    <div class="card-content">
+        <div class="card-body card-dashboard">
+            <div class="table-responsive">
+                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    <div class="row">
+                        <div class="col-m-12 col-md-6">
+                            <div class="dataTables_length" id="DataTables_Table_0_length"><label>Show <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="custom-select custom-select-sm form-control form-control-sm">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select> entries</label></div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="DataTables_Table_0"></label></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table class="table zero-configuration dataTable" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 155.344px;">S.NO. </th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 254.359px;">Customer name</th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 110.844px;">Review</th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 40.1562px;">Rating</th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 86.6094px;">Review date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+
+
+
+
+
+                                    <tr role="row" class="odd">
+                                        <td class="sorting_1">1</td>
+                                        <td>Sunil vishwakarma</td>
+                                        <td>Nice product</td>
+                                        <td> <div class="item-rating">
+                                <div class="badge badge-primary badge-md">
+                                    4 <i class="feather icon-star ml-25"></i>
+                                </div></td>
+                                        <td>02-08-2021</td>
+                                        
+                                    </tr>
+                                    <tr role="row" class="odd">
+                                        <td class="sorting_1">1</td>
+                                        <td>Sunil vishwakarma</td>
+                                        <td>Nice product</td>
+                                        <td> <div class="item-rating">
+                                <div class="badge badge-primary badge-md">
+                                    4 <i class="feather icon-star ml-25"></i>
+                                </div></td>
+                                        <td>02-08-2021</td>
+                                        
+                                    </tr><tr role="row" class="odd">
+                                        <td class="sorting_1">1</td>
+                                        <td>Sunil vishwakarma</td>
+                                        <td>Nice product</td>
+                                        <td> <div class="item-rating">
+                                <div class="badge badge-primary badge-md">
+                                    4 <i class="feather icon-star ml-25"></i>
+                                </div></td>
+                                        <td>02-08-2021</td>
+                                        
+                                    </tr><tr role="row" class="odd">
+                                        <td class="sorting_1">1</td>
+                                        <td>Sunil vishwakarma</td>
+                                        <td>Nice product</td>
+                                        <td> <div class="item-rating">
+                                <div class="badge badge-primary badge-md">
+                                    4 <i class="feather icon-star ml-25"></i>
+                                </div></td>
+                                        <td>02-08-2021</td>
+                                        
+                                    </tr><tr role="row" class="odd">
+                                        <td class="sorting_1">1</td>
+                                        <td>Sunil vishwakarma</td>
+                                        <td>Nice product</td>
+                                        <td> <div class="item-rating">
+                                <div class="badge badge-primary badge-md">
+                                    4 <i class="feather icon-star ml-25"></i>
+                                </div></td>
+                                        <td>02-08-2021</td>
+                                        
+                                    </tr><tr role="row" class="odd">
+                                        <td class="sorting_1">1</td>
+                                        <td>Sunil vishwakarma</td>
+                                        <td>Nice product</td>
+                                        <td> <div class="item-rating">
+                                <div class="badge badge-primary badge-md">
+                                    4 <i class="feather icon-star ml-25"></i>
+                                </div></td>
+                                        <td>02-08-2021</td>
+                                        
+                                    </tr><tr role="row" class="odd">
+                                        <td class="sorting_1">1</td>
+                                        <td>Sunil vishwakarma</td>
+                                        <td>Nice product</td>
+                                        <td> <div class="item-rating">
+                                <div class="badge badge-primary badge-md">
+                                    4 <i class="feather icon-star ml-25"></i>
+                                </div></td>
+                                        <td>02-08-2021</td>
+                                        
+                                    </tr><tr role="row" class="odd">
+                                        <td class="sorting_1">1</td>
+                                        <td>Sunil vishwakarma</td>
+                                        <td>Nice product</td>
+                                        <td> <div class="item-rating">
+                                <div class="badge badge-primary badge-md">
+                                    4 <i class="feather icon-star ml-25"></i>
+                                </div></td>
+                                        <td>02-08-2021</td>
+                                        
+                                    </tr><tr role="row" class="odd">
+                                        <td class="sorting_1">1</td>
+                                        <td>Sunil vishwakarma</td>
+                                        <td>Nice product</td>
+                                        <td> <div class="item-rating">
+                                <div class="badge badge-primary badge-md">
+                                    4 <i class="feather icon-star ml-25"></i>
+                                </div></td>
+                                        <td>02-08-2021</td>
+                                        
+                                    </tr>
+                                </tbody>
+                            
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-5">
+                            <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 29 entries</div>
+                        </div>
+                        <div class="col-sm-12 col-md-7">
+                            <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                                <ul class="pagination">
+                                    <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                    <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                    <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                                    <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
+                                    <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">Next</a></li>
+                                </ul>
                             </div>
-                            <div class="amount-payable checkout-options">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4 class="card-title">Price Details</h4>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <div class="detail">
-                                                <div class="details-title">
-                                                    Price of 3 items
-                                                </div>
-                                                <div class="detail-amt">
-                                                    <strong>$699.30</strong>
-                                                </div>
-                                            </div>
-                                            <div class="detail">
-                                                <div class="details-title">
-                                                    Delivery Charges
-                                                </div>
-                                                <div class="detail-amt discount-amt">
-                                                    Free
-                                                </div>
-                                            </div>
-                                            <hr>
-                                            <div class="detail">
-                                                <div class="details-title">
-                                                    Amount Payable
-                                                </div>
-                                                <div class="detail-amt total-amt">$699.30</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </fieldset>
-
-                    <!-- Checkout Payment Starts -->
-                </form>
-
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- END: Content-->
-
-    <div class="sidenav-overlay"></div>
-    <div class="drag-target"></div>
-
-    <!-- BEGIN: Footer-->
-    <footer class="footer footer-static footer-light">
-        <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2019<a class="text-bold-800 grey darken-2" href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">Pixinvent,</a>All rights Reserved</span><span class="float-md-right d-none d-md-block">Hand-crafted & Made with<i class="feather icon-heart pink"></i></span>
-            <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="feather icon-arrow-up"></i></button>
-        </p>
-    </footer>
-    <!-- END: Footer-->
+</div>
 @section('js')
-
-    <!-- BEGIN: Vendor JS-->
-    <script src="../../../app-assets/vendors/js/vendors.min.js"></script>
-    <!-- BEGIN Vendor JS-->
-
-    <!-- BEGIN: Page Vendor JS-->
-    <script src="../../../app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js"></script>
-    <script src="../../../app-assets/vendors/js/extensions/jquery.steps.min.js"></script>
-    <script src="../../../app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
-    <script src="../../../app-assets/vendors/js/extensions/toastr.min.js"></script>
-    <!-- END: Page Vendor JS-->
-
-    <!-- BEGIN: Theme JS-->
-    <script src="../../../app-assets/js/core/app-menu.js"></script>
-    <script src="../../../app-assets/js/core/app.js"></script>
-    <script src="../../../app-assets/js/scripts/components.js"></script>
-    <!-- END: Theme JS-->
-
-    <!-- BEGIN: Page JS-->
-    <script src="../../../app-assets/js/scripts/pages/app-ecommerce-shop.js"></script>
-    <!-- END: Page JS-->
-@stop
-
+@stop()
 @endsection()

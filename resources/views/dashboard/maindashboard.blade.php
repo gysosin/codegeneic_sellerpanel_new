@@ -177,5 +177,6 @@
 <script src="{{asset('/app-assets/js/scripts/charts/chart-apex.js')}}"></script>
 <script src="{{asset('/app-assets/vendors/js/charts/apexcharts.min.js')}}"></script>
 <script src="{{asset('/app-assets/js/scripts/pages/dashboard-ecommerce.js')}}"></script>
+<script src="../../../app-assets/js/scripts/cards/card-analytics.js"></script>
 @stop
 @endsection()

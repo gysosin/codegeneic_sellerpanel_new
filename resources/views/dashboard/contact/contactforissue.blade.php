@@ -1,6 +1,9 @@
 @extends('layouts.master')
 @section('title', 'dashboard')
+
+<link rel="stylesheet" type="text/css" href="../../../app-assets/css/pages/app-chat.css">
 @section('body')
+
 <div class="content-area-wrapper">
             <div class="sidebar-left">
                 <div class="sidebar">
@@ -447,7 +450,7 @@
             </div>
         </div>
     </div>
-    <!-- END: Content-->
-
-
+@section('js')
+<script src="../../../app-assets/js/scripts/pages/app-chat.js"></script>
+@stop()
 @endsection()

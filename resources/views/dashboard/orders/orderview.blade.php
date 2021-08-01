@@ -19,37 +19,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
-                    <div class="form-group breadcrum-right">
-                        <div class="dropdown">
-                            <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="feather icon-settings"></i></button>
-                            <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Chat</a><a class="dropdown-item" href="#">Email</a><a class="dropdown-item" href="#">Calendar</a></div>
-                        </div>
-                    </div>
-                </div>
+              
             </div>
             <div class="content-body">
                 <section class="card invoice-page">
                     <div id="invoice-template" class="card-body">
-                        <!-- Invoice Company Details -->
-                        <div id="invoice-company-details" class="row">
-                            <div class="col-md-6 col-sm-12 text-left pt-1">
-                                <div class="media pt-1">
-                                    <img src="../../../app-assets/images/logo/logo.png" alt="company logo" class="" />
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12 text-right">
-                                <h1>Order No</h1>
-                                <div class="invoice-details mt-2">
-                                    <h6>Order Status</h6>
-                                    <p>001/2019</p>
-                                    <h6 class="mt-2">Order Date</h6>
-                                    <p>10 Dec 2018</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/ Invoice Company Details -->
-
+                     
                         <!-- Invoice Recipient Details -->
                         
                         <div id="invoice-customer-details" class="row pt-2">

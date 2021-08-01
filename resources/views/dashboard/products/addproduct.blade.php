@@ -1,1596 +1,272 @@
 @extends('layouts.master')
 @section('title', 'dashboard')
-<script src="/cdn-cgi/apps/head/aCrVmvXdLd5mk0h4f_Wlo6smF1A.js"></script><link rel="shortcut icon" href="">
-
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://demo.6amtech.com/6valley/public/assets/back-end/css/vendor.min.css">
-<link rel="stylesheet" href="https://demo.6amtech.com/6valley/public/assets/back-end/css/custom.css">
-<link rel="stylesheet" href="https://demo.6amtech.com/6valley/public/assets/back-end/vendor/icon-set/style.css">
-
-<link rel="stylesheet" href="https://demo.6amtech.com/6valley/public/assets/back-end/css/theme.minc619.css?v=1.0">
-<link href="https://demo.6amtech.com/6valley/public/assets/back-end/css/tags-input.min.css" rel="stylesheet">
-<link href="https://demo.6amtech.com/6valley/public/assets/select2/css/select2.min.css" rel="stylesheet">
-<meta name="csrf-token" content="YpyxpvXoZnhleRKo4nPbH5O6jG9nYzKHIx5tU4QS">
-<style>
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 48px;
-            height: 23px;
-        }
-
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 15px;
-            width: 15px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-
-        input:checked + .slider {
-            background-color: #4af3ce;
-        }
-
-        input:focus + .slider {
-            box-shadow: 0 0 1px #60f3ca;
-        }
-
-        input:checked + .slider:before {
-            -webkit-transform: translateX(26px);
-            -ms-transform: translateX(26px);
-            transform: translateX(26px);
-        }
-
-        /* Rounded sliders */
-        .slider.round {
-            border-radius: 34px;
-        }
-
-        .slider.round:before {
-            border-radius: 50%;
-        }
-
-        #product-images-modal .modal-content {
-            width: 1116px !important;
-            margin-left: -264px !important;
-        }
-
-        #thumbnail-image-modal .modal-content {
-            width: 1116px !important;
-            margin-left: -264px !important;
-        }
-
-        @media (max-width: 768px) {
-            #product-images-modal .modal-content {
-                width: 698px !important;
-                margin-left: -75px !important;
-            }
-
-            #thumbnail-image-modal .modal-content {
-                width: 698px !important;
-                margin-left: -75px !important;
-            }
-        }
-
-        @media (max-width: 375px) {
-            #product-images-modal .modal-content {
-                width: 367px !important;
-                margin-left: 0 !important;
-            }
-
-            #thumbnail-image-modal .modal-content {
-                width: 367px !important;
-                margin-left: 0 !important;
-            }
-        }
-
-        @media (max-width: 500px) {
-            #product-images-modal .modal-content {
-                width: 400px !important;
-                margin-left: 0 !important;
-            }
-
-            #thumbnail-image-modal .modal-content {
-                width: 400px !important;
-                margin-left: 0 !important;
-            }
-
-            .btn-for-m {
-                margin-bottom: 10px;
-            }
-
-            .parcent-margin {
-                margin-left: 0px !important;
-            }
-        }
-    </style>
-<script src="https://demo.6amtech.com/6valley/public/assets/back-end/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js"></script>
-<link rel="stylesheet" href="https://demo.6amtech.com/6valley/public/assets/back-end/css/toastr.css">
-</head>
+<link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/editors/quill/katex.min.css">
+<link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/editors/quill/monokai-sublime.min.css">
+<link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/editors/quill/quill.snow.css">
+<link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/editors/quill/quill.bubble.css">
+<link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/file-uploaders/dropzone.css">
+<link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/ui/prism.min.css">
+<link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/file-uploaders/dropzone.min.css">
 @section('body')
-<div class="content-wrapper">
-
+<section id="basic-input">
     <div class="row">
         <div class="col-md-12">
-            <form class="product-form" action="https://demo.6amtech.com/6valley/seller/product/add-new" method="post" enctype="multipart/form-data" id="product_form">
-                <input type="hidden" name="_token" value="YpyxpvXoZnhleRKo4nPbH5O6jG9nYzKHIx5tU4QS">
-                <div class="card">
-                    <div class="card-header">
-                        <ul class="nav nav-tabs mb-4">
-                            <li class="nav-item">
-                                <a class="nav-link lang_link active" href="#" id="en-link">English(EN)</a>
-                            </li>
-                           
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <div class=" lang_form" id="en-form">
-                            <div class="form-group">
-                                <label class="input-label" for="en_name">Name
-                                    (EN)</label>
-                                <input type="text" required name="name[]" id="en_name" class="form-control" placeholder="New Product" required>
-                            </div>
-                            <input type="hidden" name="lang[]" value="en">
-                            <div class="form-group pt-4">
-                                <label class="input-label" for="en_description">Description
-                                    (EN)</label>
-                                <textarea name="description[]" class="editor" cols="30" rows="10" required></textarea>
-                            </div>
-                        </div>
-                       
-                    </div>
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Add product</h4>
                 </div>
-                <div class="card mt-2 rest-part">
-                    <div class="card-header">
-                        <h4>General Info</h4>
-                    </div>
+                <div class="card-content">
                     <div class="card-body">
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <label for="name">Category</label>
-                                    <select class="js-example-basic-multiple form-control" name="category_id" onchange="getRequest('https://demo.6amtech.com/6valley/seller/product/get-categories?parent_id='+this.value,'sub-category-select','select')" required>
-                                        <option value="" selected disabled>---Select---</option>
-                                        <option value="37">
-                                            Women&#039;s Fashion
-                                        </option>
-                                        <option value="38">
-                                            Men&#039;s Fashion
-                                        </option>
-                                        <option value="39">
-                                            Phones &amp; Telecom
-                                        </option>
-                                        <option value="40">
-                                            Computer, Office &amp; Security
-                                        </option>
-                                        <option value="43">
-                                            Jewelry &amp; Watches
-                                        </option>
-                                        <option value="44">
-                                            Home, Pet &amp; Appliances
-                                        </option>
-                                        <option value="45">
-                                            Bags &amp; Shoes
-                                        </option>
-                                        <option value="46">
-                                            Toys , Kids &amp; Babies
-                                        </option>
-                                        <option value="47">
-                                            Outdoor Fun &amp; Sports
-                                        </option>
-                                        <option value="114">
-                                            Home Improvement &amp; Tools
-                                        </option>
-                                        <option value="116">
-                                            Beauty, Health &amp; Hair
-                                        </option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="name">Sub Category</label>
-                                    <select class="js-example-basic-multiple form-control" name="sub_category_id" id="sub-category-select" onchange="getRequest('https://demo.6amtech.com/6valley/seller/product/get-categories?parent_id='+this.value,'sub-sub-category-select','select')">
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="name">Sub Sub Category</label>
-                                    <select class="js-example-basic-multiple form-control" name="sub_sub_category_id" id="sub-sub-category-select">
-                                    </select>
-                                </div>
+                        <div class="row">
+                            <div class="col-xl-12 col-md-6 col-12 mb-1">
+                                <fieldset class="form-group">
+                                    <label for="basicInput">Product Name</label>
+                                    <input type="text" class="form-control" id="basicInput" placeholder="Enter email">
+                                </fieldset>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="name">Brand</label>
-                                    <select class="js-example-basic-multiple js-states js-example-responsive form-control" name="brand_id" required>
-                                        <option value="" selected disabled>---Select---</option>
-                                        <option value="9">Apple</option>
-                                        <option value="8">Bata</option>
-                                        <option value="3">Dove</option>
-                                        <option value="6">Kodak</option>
-                                        <option value="1">Ledger</option>
-                                        <option value="5">Samsung</option>
-                                        <option value="2">Subrtex</option>
-                                        <option value="4">Timex</option>
-                                        <option value="7">Yellow</option>
-                                    </select>
+
+                            <section class="snow-editor">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title">Product Details</h4>
+                                            </div>
+                                            <div class="card-content collapse show">
+                                                <div class="card-body">
+                                                    <p>Describe your product</p>
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <div id="snow-wrapper">
+                                                                <div id="snow-container">
+                                                                    <div class="quill-toolbar">
+                                                                        <span class="ql-formats">
+                                                                            <select class="ql-header">
+                                                                                <option value="1">Heading</option>
+                                                                                <option value="2">Subheading</option>
+                                                                                <option selected>Normal</option>
+                                                                            </select>
+                                                                            <select class="ql-font">
+                                                                                <option selected>Sailec Light</option>
+                                                                                <option value="sofia">Sofia Pro</option>
+                                                                                <option value="slabo">Slabo 27px</option>
+                                                                                <option value="roboto">Roboto Slab</option>
+                                                                                <option value="inconsolata">Inconsolata</option>
+                                                                                <option value="ubuntu">Ubuntu Mono</option>
+                                                                            </select>
+                                                                        </span>
+                                                                        <span class="ql-formats">
+                                                                            <button class="ql-bold"></button>
+                                                                            <button class="ql-italic"></button>
+                                                                            <button class="ql-underline"></button>
+                                                                        </span>
+                                                                        <span class="ql-formats">
+                                                                            <button class="ql-list" value="ordered"></button>
+                                                                            <button class="ql-list" value="bullet"></button>
+                                                                        </span>
+                                                                        <span class="ql-formats">
+                                                                            <button class="ql-link"></button>
+                                                                            <button class="ql-image"></button>
+                                                                            <button class="ql-video"></button>
+                                                                        </span>
+                                                                        <span class="ql-formats">
+                                                                            <button class="ql-formula"></button>
+                                                                            <button class="ql-code-block"></button>
+                                                                        </span>
+                                                                        <span class="ql-formats">
+                                                                            <button class="ql-clean"></button>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="editor">
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="name">Unit</label>
-                                    <select class="js-example-basic-multiple form-control" name="unit">
-                                        <option value="kg">kg</option>
-                                        <option value="pc">pc</option>
-                                        <option value="gms">gms</option>
-                                        <option value="ltrs">ltrs</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mt-2 rest-part">
-                    <div class="card-header">
-                        <h4>Variations</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="colors">
-                                        Colors :
-                                    </label>
-                                    <label class="switch">
-                                        <input type="checkbox" class="status" name="colors_active" value="">
-                                        <span class="slider round"></span>
-                                    </label>
-                                    <select class="form-control js-select2-custom" name="colors[]" multiple="multiple" id="colors-selector" disabled>
-                                        <option value="#F0F8FF">
-                                            AliceBlue
-                                        </option>
-                                        <option value="#9966CC">
-                                            Amethyst
-                                        </option>
-                                        <option value="#FAEBD7">
-                                            AntiqueWhite
-                                        </option>
-                                        <option value="#00FFFF">
-                                            Aqua
-                                        </option>
-                                        <option value="#7FFFD4">
-                                            Aquamarine
-                                        </option>
-                                        <option value="#F0FFFF">
-                                            Azure
-                                        </option>
-                                        <option value="#F5F5DC">
-                                            Beige
-                                        </option>
-                                        <option value="#FFE4C4">
-                                            Bisque
-                                        </option>
-                                        <option value="#000000">
-                                            Black
-                                        </option>
-                                        <option value="#FFEBCD">
-                                            BlanchedAlmond
-                                        </option>
-                                        <option value="#0000FF">
-                                            Blue
-                                        </option>
-                                        <option value="#8A2BE2">
-                                            BlueViolet
-                                        </option>
-                                        <option value="#A52A2A">
-                                            Brown
-                                        </option>
-                                        <option value="#DEB887">
-                                            BurlyWood
-                                        </option>
-                                        <option value="#5F9EA0">
-                                            CadetBlue
-                                        </option>
-                                        <option value="#7FFF00">
-                                            Chartreuse
-                                        </option>
-                                        <option value="#D2691E">
-                                            Chocolate
-                                        </option>
-                                        <option value="#FF7F50">
-                                            Coral
-                                        </option>
-                                        <option value="#6495ED">
-                                            CornflowerBlue
-                                        </option>
-                                        <option value="#FFF8DC">
-                                            Cornsilk
-                                        </option>
-                                        <option value="#DC143C">
-                                            Crimson
-                                        </option>
-                                        <option value="#00FFFF">
-                                            Cyan
-                                        </option>
-                                        <option value="#00008B">
-                                            DarkBlue
-                                        </option>
-                                        <option value="#008B8B">
-                                            DarkCyan
-                                        </option>
-                                        <option value="#B8860B">
-                                            DarkGoldenrod
-                                        </option>
-                                        <option value="#A9A9A9">
-                                            DarkGray
-                                        </option>
-                                        <option value="#006400">
-                                            DarkGreen
-                                        </option>
-                                        <option value="#BDB76B">
-                                            DarkKhaki
-                                        </option>
-                                        <option value="#8B008B">
-                                            DarkMagenta
-                                        </option>
-                                        <option value="#556B2F">
-                                            DarkOliveGreen
-                                        </option>
-                                        <option value="#FF8C00">
-                                            DarkOrange
-                                        </option>
-                                        <option value="#9932CC">
-                                            DarkOrchid
-                                        </option>
-                                        <option value="#8B0000">
-                                            DarkRed
-                                        </option>
-                                        <option value="#E9967A">
-                                            DarkSalmon
-                                        </option>
-                                        <option value="#8FBC8F">
-                                            DarkSeaGreen
-                                        </option>
-                                        <option value="#483D8B">
-                                            DarkSlateBlue
-                                        </option>
-                                        <option value="#2F4F4F">
-                                            DarkSlateGray
-                                        </option>
-                                        <option value="#00CED1">
-                                            DarkTurquoise
-                                        </option>
-                                        <option value="#9400D3">
-                                            DarkViolet
-                                        </option>
-                                        <option value="#FF1493">
-                                            DeepPink
-                                        </option>
-                                        <option value="#00BFFF">
-                                            DeepSkyBlue
-                                        </option>
-                                        <option value="#696969">
-                                            DimGray
-                                        </option>
-                                        <option value="#1E90FF">
-                                            DodgerBlue
-                                        </option>
-                                        <option value="#B22222">
-                                            FireBrick
-                                        </option>
-                                        <option value="#FFFAF0">
-                                            FloralWhite
-                                        </option>
-                                        <option value="#228B22">
-                                            ForestGreen
-                                        </option>
-                                        <option value="#FF00FF">
-                                            Fuchsia
-                                        </option>
-                                        <option value="#DCDCDC">
-                                            Gainsboro
-                                        </option>
-                                        <option value="#F8F8FF">
-                                            GhostWhite
-                                        </option>
-                                        <option value="#FFD700">
-                                            Gold
-                                        </option>
-                                        <option value="#DAA520">
-                                            Goldenrod
-                                        </option>
-                                        <option value="#808080">
-                                            Gray
-                                        </option>
-                                        <option value="#008000">
-                                            Green
-                                        </option>
-                                        <option value="#ADFF2F">
-                                            GreenYellow
-                                        </option>
-                                        <option value="#F0FFF0">
-                                            Honeydew
-                                        </option>
-                                        <option value="#FF69B4">
-                                            HotPink
-                                        </option>
-                                        <option value="#CD5C5C">
-                                            IndianRed
-                                        </option>
-                                        <option value="#4B0082">
-                                            Indigo
-                                        </option>
-                                        <option value="#FFFFF0">
-                                            Ivory
-                                        </option>
-                                        <option value="#F0E68C">
-                                            Khaki
-                                        </option>
-                                        <option value="#E6E6FA">
-                                            Lavender
-                                        </option>
-                                        <option value="#FFF0F5">
-                                            LavenderBlush
-                                        </option>
-                                        <option value="#7CFC00">
-                                            LawnGreen
-                                        </option>
-                                        <option value="#FFFACD">
-                                            LemonChiffon
-                                        </option>
-                                        <option value="#ADD8E6">
-                                            LightBlue
-                                        </option>
-                                        <option value="#F08080">
-                                            LightCoral
-                                        </option>
-                                        <option value="#E0FFFF">
-                                            LightCyan
-                                        </option>
-                                        <option value="#FAFAD2">
-                                            LightGoldenrodYellow
-                                        </option>
-                                        <option value="#90EE90">
-                                            LightGreen
-                                        </option>
-                                        <option value="#D3D3D3">
-                                            LightGrey
-                                        </option>
-                                        <option value="#FFB6C1">
-                                            LightPink
-                                        </option>
-                                        <option value="#FFA07A">
-                                            LightSalmon
-                                        </option>
-                                        <option value="#FFA07A">
-                                            LightSalmon
-                                        </option>
-                                        <option value="#20B2AA">
-                                            LightSeaGreen
-                                        </option>
-                                        <option value="#87CEFA">
-                                            LightSkyBlue
-                                        </option>
-                                        <option value="#778899">
-                                            LightSlateGray
-                                        </option>
-                                        <option value="#B0C4DE">
-                                            LightSteelBlue
-                                        </option>
-                                        <option value="#FFFFE0">
-                                            LightYellow
-                                        </option>
-                                        <option value="#00FF00">
-                                            Lime
-                                        </option>
-                                        <option value="#32CD32">
-                                            LimeGreen
-                                        </option>
-                                        <option value="#FAF0E6">
-                                            Linen
-                                        </option>
-                                        <option value="#FF00FF">
-                                            Magenta
-                                        </option>
-                                        <option value="#800000">
-                                            Maroon
-                                        </option>
-                                        <option value="#66CDAA">
-                                            MediumAquamarine
-                                        </option>
-                                        <option value="#0000CD">
-                                            MediumBlue
-                                        </option>
-                                        <option value="#BA55D3">
-                                            MediumOrchid
-                                        </option>
-                                        <option value="#9370DB">
-                                            MediumPurple
-                                        </option>
-                                        <option value="#3CB371">
-                                            MediumSeaGreen
-                                        </option>
-                                        <option value="#7B68EE">
-                                            MediumSlateBlue
-                                        </option>
-                                        <option value="#7B68EE">
-                                            MediumSlateBlue
-                                        </option>
-                                        <option value="#00FA9A">
-                                            MediumSpringGreen
-                                        </option>
-                                        <option value="#48D1CC">
-                                            MediumTurquoise
-                                        </option>
-                                        <option value="#C71585">
-                                            MediumVioletRed
-                                        </option>
-                                        <option value="#191970">
-                                            MidnightBlue
-                                        </option>
-                                        <option value="#F5FFFA">
-                                            MintCream
-                                        </option>
-                                        <option value="#FFE4E1">
-                                            MistyRose
-                                        </option>
-                                        <option value="#FFE4B5">
-                                            Moccasin
-                                        </option>
-                                        <option value="#FFDEAD">
-                                            NavajoWhite
-                                        </option>
-                                        <option value="#000080">
-                                            Navy
-                                        </option>
-                                        <option value="#FDF5E6">
-                                            OldLace
-                                        </option>
-                                        <option value="#808000">
-                                            Olive
-                                        </option>
-                                        <option value="#6B8E23">
-                                            OliveDrab
-                                        </option>
-                                        <option value="#FFA500">
-                                            Orange
-                                        </option>
-                                        <option value="#FF4500">
-                                            OrangeRed
-                                        </option>
-                                        <option value="#DA70D6">
-                                            Orchid
-                                        </option>
-                                        <option value="#EEE8AA">
-                                            PaleGoldenrod
-                                        </option>
-                                        <option value="#98FB98">
-                                            PaleGreen
-                                        </option>
-                                        <option value="#AFEEEE">
-                                            PaleTurquoise
-                                        </option>
-                                        <option value="#DB7093">
-                                            PaleVioletRed
-                                        </option>
-                                        <option value="#FFEFD5">
-                                            PapayaWhip
-                                        </option>
-                                        <option value="#FFDAB9">
-                                            PeachPuff
-                                        </option>
-                                        <option value="#CD853F">
-                                            Peru
-                                        </option>
-                                        <option value="#FFC0CB">
-                                            Pink
-                                        </option>
-                                        <option value="#DDA0DD">
-                                            Plum
-                                        </option>
-                                        <option value="#B0E0E6">
-                                            PowderBlue
-                                        </option>
-                                        <option value="#800080">
-                                            Purple
-                                        </option>
-                                        <option value="#FF0000">
-                                            Red
-                                        </option>
-                                        <option value="#BC8F8F">
-                                            RosyBrown
-                                        </option>
-                                        <option value="#4169E1">
-                                            RoyalBlue
-                                        </option>
-                                        <option value="#8B4513">
-                                            SaddleBrown
-                                        </option>
-                                        <option value="#FA8072">
-                                            Salmon
-                                        </option>
-                                        <option value="#F4A460">
-                                            SandyBrown
-                                        </option>
-                                        <option value="#2E8B57">
-                                            SeaGreen
-                                        </option>
-                                        <option value="#FFF5EE">
-                                            Seashell
-                                        </option>
-                                        <option value="#A0522D">
-                                            Sienna
-                                        </option>
-                                        <option value="#C0C0C0">
-                                            Silver
-                                        </option>
-                                        <option value="#87CEEB">
-                                            SkyBlue
-                                        </option>
-                                        <option value="#6A5ACD">
-                                            SlateBlue
-                                        </option>
-                                        <option value="#708090">
-                                            SlateGray
-                                        </option>
-                                        <option value="#FFFAFA">
-                                            Snow
-                                        </option>
-                                        <option value="#00FF7F">
-                                            SpringGreen
-                                        </option>
-                                        <option value="#4682B4">
-                                            SteelBlue
-                                        </option>
-                                        <option value="#D2B48C">
-                                            Tan
-                                        </option>
-                                        <option value="#008080">
-                                            Teal
-                                        </option>
-                                        <option value="#D8BFD8">
-                                            Thistle
-                                        </option>
-                                        <option value="#FF6347">
-                                            Tomato
-                                        </option>
-                                        <option value="#40E0D0">
-                                            Turquoise
-                                        </option>
-                                        <option value="#EE82EE">
-                                            Violet
-                                        </option>
-                                        <option value="#F5DEB3">
-                                            Wheat
-                                        </option>
-                                        <option value="#FFFFFF">
-                                            White
-                                        </option>
-                                        <option value="#F5F5F5">
-                                            WhiteSmoke
-                                        </option>
-                                        <option value="#FFFF00">
-                                            Yellow
-                                        </option>
-                                        <option value="#9ACD32">
-                                            YellowGreen
-                                        </option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="attributes" style="padding-bottom: 3px">
-                                        Attributes :
-                                    </label>
-                                    <select class="form-control js-select2-custom" name="choice_attributes[]" id="choice_attributes" multiple="multiple">
-                                        <option value="1">
-                                            Size
-                                        </option>
-                                    </select>
-                                </div>
-                                <div class="col-md-12 mt-2 mb-2">
-                                    <div class="customer_choice_options" id="customer_choice_options">
+                            </section>
+                            <div class="row" data-select2-id="128">
+                                <div class="col-12" data-select2-id="127">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">General Information of product</h4>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-12 mb-2">
+                                                        <a href="https://select2.org/getting-started/installation" target="_blank">For more information </a>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12" data-select2-id="126">
+                                                        <div class="text-bold-600 font-medium-2">
+                                                            Category
+                                                        </div>
+                                                        <div class="form-group" data-select2-id="125">
+                                                            <select class="select2 form-control select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                                                <option value="square" data-select2-id="3">Square</option>
+                                                                <option value="rectangle" data-select2-id="133">Rectangle</option>
+                                                                <option value="rombo" data-select2-id="134">Rombo</option>
+                                                                <option value="romboid" data-select2-id="135">Romboid</option>
+                                                                <option value="trapeze" data-select2-id="136">Trapeze</option>
+                                                                <option value="traible" data-select2-id="137">Triangle</option>
+                                                                <option value="polygon" data-select2-id="138">Polygon</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12" data-select2-id="126">
+                                                        <div class="text-bold-600 font-medium-2">
+                                                            Sub category </div>
+                                                        <div class="form-group" data-select2-id="125">
+                                                            <select class="select2 form-control select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                                                <option value="square" data-select2-id="3">Square</option>
+                                                                <option value="rectangle" data-select2-id="133">Rectangle</option>
+                                                                <option value="rombo" data-select2-id="134">Rombo</option>
+                                                                <option value="romboid" data-select2-id="135">Romboid</option>
+                                                                <option value="trapeze" data-select2-id="136">Trapeze</option>
+                                                                <option value="traible" data-select2-id="137">Triangle</option>
+                                                                <option value="polygon" data-select2-id="138">Polygon</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12" data-select2-id="126">
+                                                        <div class="text-bold-600 font-medium-2">
+                                                            brand
+                                                        </div>
+                                                        <div class="form-group" data-select2-id="125">
+                                                            <select class="select2 form-control select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                                                <option value="square" data-select2-id="3">Square</option>
+                                                                <option value="rectangle" data-select2-id="133">Rectangle</option>
+                                                                <option value="rombo" data-select2-id="134">Rombo</option>
+                                                                <option value="romboid" data-select2-id="135">Romboid</option>
+                                                                <option value="trapeze" data-select2-id="136">Trapeze</option>
+                                                                <option value="traible" data-select2-id="137">Triangle</option>
+                                                                <option value="polygon" data-select2-id="138">Polygon</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12" data-select2-id="126">
+                                                        <div class="text-bold-600 font-medium-2">
+                                                            Unit
+                                                        </div>
+                                                        <div class="form-group" data-select2-id="125">
+                                                            <select class="select2 form-control select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                                                <option value="square" data-select2-id="3">Square</option>
+                                                                <option value="rectangle" data-select2-id="133">Rectangle</option>
+                                                                <option value="rombo" data-select2-id="134">Rombo</option>
+                                                                <option value="romboid" data-select2-id="135">Romboid</option>
+                                                                <option value="trapeze" data-select2-id="136">Trapeze</option>
+                                                                <option value="traible" data-select2-id="137">Triangle</option>
+                                                                <option value="polygon" data-select2-id="138">Polygon</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h4 class="card-title" Product Price and stock</h4>
+                                                    </div>
+                                                    <div class="card-content">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-xl-4 col-md-6 col-12 mb-1">
+                                                                    <fieldset class="form-group">
+                                                                        <label for="basicInput">Unit price</label>
+                                                                        <input type="text" class="form-control" id="basicInput" placeholder="Enter email">
+                                                                    </fieldset>
+                                                                </div>
+                                                                <div class="col-xl-4 col-md-6 col-12 mb-1">
+                                                                    <fieldset class="form-group">
+                                                                        <label for="basicInput">Purchase price</label>
+                                                                        <input type="text" class="form-control" id="basicInput" placeholder="Enter email">
+                                                                    </fieldset>
+                                                                </div>
+                                                                <div class="col-xl-4 col-md-6 col-12 mb-1">
+                                                                    <fieldset class="form-group">
+                                                                        <label for="basicInput">Tax</label>
+                                                                        <input type="text" class="form-control" id="basicInput" placeholder="Enter email">
+                                                                    </fieldset>
+                                                                </div>
+                                                                <div class="col-xl-4 col-md-6 col-12 mb-1">
+                                                                    <fieldset class="form-group">
+                                                                        <label for="basicInput">Discount %</label>
+                                                                        <input type="text" class="form-control" id="basicInput" placeholder="Enter email">
+
+                                                                    </fieldset>
+
+                                                                </div>
+                                                                <div class="col-xl-4 col-md-6 col-12 mb-1">
+                                                                    <fieldset class="form-group">
+                                                                        <label for="basicInput">Discount flat</label>
+                                                                        <input type="text" class="form-control" id="basicInput" placeholder="Enter email">
+
+                                                                    </fieldset>
+
+                                                                </div>
+                                                                <div class="col-xl-4 col-md-6 col-12 mb-1">
+                                                                    <fieldset class="form-group">
+                                                                        <label for="basicInput">Total quantity</label>
+                                                                        <input type="text" class="form-control" id="basicInput" placeholder="Enter email">
+                                                                    </fieldset>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h4 class="card-title">Upload images</h4>
+                                                            </div>
+                                                            <div class="card-content">
+                                                                <div class="card-body">
+                                                                    <p class="card-text">Upload images of the product</p>
+                                                                    <form action="#" class="dropzone dropzone-area dz-clickable" id="dpz-multiple-files">
+                                                                        <div class="dz-message">Drop Files Here To Upload or click here</div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <button type="button" class="btn btn-primary mr-1 mb-1 waves-effect waves-light float-lg-right">Add product</button>
                     </div>
                 </div>
-                <div class="card mt-2 rest-part">
-                    <div class="card-header">
-                        <h4>Product price &amp; stock</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label class="control-label">Unit price</label>
-                                    <input type="number" min="0" value="0" step="0.01" placeholder="Unit price" name="unit_price" value="" class="form-control" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="control-label">Purchase price</label>
-                                    <input type="number" min="0" value="0" step="0.01" placeholder="Purchase price" name="purchase_price" value="" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="row pt-4">
-                                <div class="col-md-6">
-                                    <label class="control-label">Tax</label>
-                                    <label class="badge badge-info">Percent ( % )</label>
-                                    <input type="number" min="0" value="0" step="0.01" placeholder="Tax}" name="tax" value="" class="form-control">
-                                    <input name="tax_type" value="percent" style="display: none">
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="control-label">Discount</label>
-                                    <input type="number" min="0" value="0" step="0.01" placeholder="Discount" name="discount" value="" class="form-control">
-                                </div>
-                                <div class="col-md-2" style="padding-top: 30px;">
-                                    <select class="form-control js-select2-custom" name="discount_type">
-                                        <option value="flat">Flat</option>
-                                        <option value="percent">Percent</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="sku_combination" id="sku_combination">
-                            </div>
-                            <div class="row pt-4">
-                                <div class="col-md-6" id="quantity">
-                                    <label class="control-label">Total Quantity</label>
-                                    <input type="number" min="0" value="0" step="1" placeholder="Quantity" name="current_stock" value="" class="form-control" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mt-2 rest-part">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-12 mb-4">
-                                <label class="control-label">Youtube video link</label>
-                                <small class="badge badge-soft-danger"> ( optional, please provide embed link not direct link. )</small>
-                                <input type="text" name="video_link" placeholder="EX : https://www.youtube.com/embed/5R06LRdUCSE" class="form-control" required>
-                            </div>
-                            <div class="card mt-2 rest-part">
-<div class="card-body">
-<div class="row">
-<div class="col-md-12 mb-4">
-<label class="control-label">Youtube video link</label>
-<small class="badge badge-soft-danger"> ( optional, please provide embed link not direct link. )</small>
-<input type="text" name="video_link" placeholder="EX : https://www.youtube.com/embed/5R06LRdUCSE" class="form-control" required="">
-</div>
-<div class="col-md-8">
-<div class="form-group">
-<label>Upload product images</label><small style="color: red">* ( ratio 1:1 )</small>
-</div>
-<div class="p-2 border border-dashed" style="max-width:430px;">
-<div class="row" id="coba"><div class="col-6 spartan_item_wrapper" data-spartanindexrow="0" style="margin-bottom : 20px; "><div style="position: relative;"><div class="spartan_item_loader" data-spartanindexloader="0" style=" position: absolute; width: 100%; height: auto; background: rgba(255,255,255, 0.7); z-index: 22; text-align: center; align-items: center; margin: auto; justify-content: center; flex-direction: column; display : none; font-size : 1.7em; color: #CECECE"><i class="fas fa-sync fa-spin"></i></div><label class="file_upload" style="width: 100%; height: auto; border: 2px dashed #ddd; border-radius: 3px; cursor: pointer; text-align: center; overflow: hidden; padding: 5px; margin-top: 5px; margin-bottom : 5px; position : relative; display: flex; align-items: center; margin: auto; justify-content: center; flex-direction: column;"><a href="javascript:void(0)" data-spartanindexremove="0" style="position: absolute !important; right : 3px; top: 3px; display : none; background : transparent; border-radius: 3px; width: 30px; height: 30px; line-height : 30px; text-align: center; text-decoration : none; color : #ff0700;" class="spartan_remove_row"><i class="tio-add-to-trash"></i></a><img style="width: 100%; margin: 0 auto; vertical-align: middle;" data-spartanindexi="0" src="https://demo.6amtech.com/6valley/public/assets/back-end/img/400x400/img2.jpg" class="spartan_image_placeholder"> <p data-spartanlbldropfile="0" style="color : #5FAAE1; display: none; width : auto; ">Drop Here</p><img style="width: 100%; vertical-align: middle; display:none;" class="img_" data-spartanindeximage="0"><input class="form-control spartan_image_input" accept="image/*" data-spartanindexinput="0" style="display : none" name="images[]" type="file"></label> </div></div></div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="form-group">
-<label for="name">Upload thumbnail</label><small style="color: red">* ( ratio 1:1 )</small>
-</div>
-<div style="max-width:200px;">
-<div class="row" id="thumbnail"><div class="col-12 spartan_item_wrapper" data-spartanindexrow="0" style="margin-bottom : 20px; "><div style="position: relative;"><div class="spartan_item_loader" data-spartanindexloader="0" style=" position: absolute; width: 100%; height: auto; background: rgba(255,255,255, 0.7); z-index: 22; text-align: center; align-items: center; margin: auto; justify-content: center; flex-direction: column; display : none; font-size : 1.7em; color: #CECECE"><i class="fas fa-sync fa-spin"></i></div><label class="file_upload" style="width: 100%; height: auto; border: 2px dashed #ddd; border-radius: 3px; cursor: pointer; text-align: center; overflow: hidden; padding: 5px; margin-top: 5px; margin-bottom : 5px; position : relative; display: flex; align-items: center; margin: auto; justify-content: center; flex-direction: column;"><a href="javascript:void(0)" data-spartanindexremove="0" style="position: absolute !important; right : 3px; top: 3px; display : none; background : transparent; border-radius: 3px; width: 30px; height: 30px; line-height : 30px; text-align: center; text-decoration : none; color : #ff0700;" class="spartan_remove_row"><i class="tio-add-to-trash"></i></a><img style="width: 100%; margin: 0 auto; vertical-align: middle;" data-spartanindexi="0" src="https://demo.6amtech.com/6valley/public/assets/back-end/img/400x400/img2.jpg" class="spartan_image_placeholder"> <p data-spartanlbldropfile="0" style="color : #5FAAE1; display: none; width : auto; ">Drop Here</p><img style="width: 100%; vertical-align: middle; display:none;" class="img_" data-spartanindeximage="0"><input class="form-control spartan_image_input" accept="image/*" data-spartanindexinput="0" style="display : none" name="image" type="file"></label> </div></div></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card card-footer">
-                    <div class="row">
-                        <div class="col-md-12" style="padding-top: 20px">
-                            <button type="button" onclick="check()" class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-
-<div class="footer">
-    <div class="row justify-content-between align-items-center">
-        <div class="col">
-        </div>
-        <div class="col-auto">
-            <div class="d-flex justify-content-end">
-
-                <ul class="list-inline list-separator">
-                    <span>Copyright &copy; https://demo.6amtech.com/6valley 2021</span>
-                </ul>
-
             </div>
+
         </div>
+
     </div>
-</div>
-<!-- END: Content-->
-
-<div class="sidenav-overlay"></div>
-<div class="drag-target"></div>
-
-<!-- BEGIN: Footer-->
-<footer class="footer footer-static footer-light">
-    <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2019<a class="text-bold-800 grey darken-2" href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">Pixinvent,</a>All rights Reserved</span><span class="float-md-right d-none d-md-block">Hand-crafted & Made with<i class="feather icon-heart pink"></i></span>
-        <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="feather icon-arrow-up"></i></button>
-    </p>
-</footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://demo.6amtech.com/6valley/public/assets/back-end/js/custom.js"></script>
-
-<script src="https://demo.6amtech.com/6valley/public/assets/back-end/js/tags-input.min.js"></script>
-<script src="https://demo.6amtech.com/6valley/public/assets/select2/js/select2.min.js"></script>
-<script src="https://demo.6amtech.com/6valley/public/assets/back-end/js/spartan-multi-image-picker.js"></script>
-<script>
-        var imageCount = 1;
-        var thumbnail = 'https://demo.6amtech.com/6valley/storage/app/public/product/thumbnail/2021-06-05-60bb200ef1223.png';
-        $(function () {
-            if (imageCount > 0) {
-                $("#coba").spartanMultiImagePicker({
-                    fieldName: 'images[]',
-                    maxCount: imageCount,
-                    rowHeight: 'auto',
-                    groupClassName: 'col-6',
-                    maxFileSize: '',
-                    placeholderImage: {
-                        image: 'https://demo.6amtech.com/6valley/public/assets/back-end/img/400x400/img2.jpg',
-                        width: '100%',
-                    },
-                    dropFileLabel: "Drop Here",
-                    onAddRow: function (index, file) {
-
-                    },
-                    onRenderedPreview: function (index) {
-
-                    },
-                    onRemoveRow: function (index) {
-
-                    },
-                    onExtensionErr: function (index, file) {
-                        toastr.error('Please only input png or jpg type file', {
-                            CloseButton: true,
-                            ProgressBar: true
-                        });
-                    },
-                    onSizeErr: function (index, file) {
-                        toastr.error('File size too big', {
-                            CloseButton: true,
-                            ProgressBar: true
-                        });
-                    }
-                });
-            }
-            $("#thumbnail").spartanMultiImagePicker({
-                fieldName: 'image',
-                maxCount: 1,
-                rowHeight: 'auto',
-                groupClassName: 'col-12',
-                maxFileSize: '',
-                placeholderImage: {
-                    image: thumbnail,
-                    width: '100%',
-                },
-                dropFileLabel: "Drop Here",
-                onAddRow: function (index, file) {
-
-                },
-                onRenderedPreview: function (index) {
-
-                },
-                onRemoveRow: function (index) {
-
-                },
-                onExtensionErr: function (index, file) {
-                    toastr.error('Please only input png or jpg type file', {
-                        CloseButton: true,
-                        ProgressBar: true
-                    });
-                },
-                onSizeErr: function (index, file) {
-                    toastr.error('File size too big', {
-                        CloseButton: true,
-                        ProgressBar: true
-                    });
-                }
-            });
-
-        });
-
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#viewer').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        $("#customFileUpload").change(function () {
-            readURL(this);
-        });
-
-        $(".js-example-theme-single").select2({
-            theme: "classic"
-        });
-
-        $(".js-example-responsive").select2({
-            width: 'resolve'
-        });
-    </script>
-<script>
-        function getRequest(route, id, type) {
-            $.get({
-                url: route,
-                dataType: 'json',
-                success: function (data) {
-                    if (type == 'select') {
-                        $('#' + id).empty().append(data.select_tag);
-                    }
-                },
-            });
-        }
-
-        $('input[name="colors_active"]').on('change', function () {
-            if (!$('input[name="colors_active"]').is(':checked')) {
-                $('#colors-selector').prop('disabled', true);
-            } else {
-                $('#colors-selector').prop('disabled', false);
-            }
-        });
-
-        $('#choice_attributes').on('change', function () {
-            $('#customer_choice_options').html(null);
-            $.each($("#choice_attributes option:selected"), function () {
-                //console.log($(this).val());
-                add_more_customer_choice_option($(this).val(), $(this).text());
-            });
-        });
-
-        function add_more_customer_choice_option(i, name) {
-            let n = name.split(' ').join('');
-            $('#customer_choice_options').append('<div class="row"><div class="col-md-3"><input type="hidden" name="choice_no[]" value="' + i + '"><input type="text" class="form-control" name="choice[]" value="' + n + '" placeholder="messages.Choice Title" readonly></div><div class="col-lg-9"><input type="text" class="form-control" name="choice_options_' + i + '[]" placeholder="Enter choice values" data-role="tagsinput" onchange="update_sku()"></div></div>');
-            $("input[data-role=tagsinput], select[multiple][data-role=tagsinput]").tagsinput();
-        }
-
-        setInterval(function () {
-            $('.call-update-sku').on('change', function () {
-                update_sku();
-            });
-        }, 2000)
-
-        $('#colors-selector').on('change', function () {
-            update_sku();
-        });
-
-        $('input[name="unit_price"]').on('keyup', function () {
-            update_sku();
-        });
-
-        function update_sku() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            $.ajax({
-                type: "POST",
-                url: 'https://demo.6amtech.com/6valley/seller/product/sku-combination',
-                data: $('#product_form').serialize(),
-                success: function (data) {
-                    $('#sku_combination').html(data.view);
-                    if (data.length > 1) {
-                        $('#quantity').hide();
-                    } else {
-                        $('#quantity').show();
-                    }
-                }
-            });
-        }
-
-        $(document).ready(function () {
-            let category = $("#category_id").val();
-            let sub_category = $("#sub-category-select").attr("data-id");
-            let sub_sub_category = $("#sub-sub-category-select").attr("data-id");
-            getRequest('https://demo.6amtech.com/6valley/seller/product/get-categories?parent_id=' + category + '&sub_category=' + sub_category, 'sub-category-select', 'select');
-            getRequest('https://demo.6amtech.com/6valley/seller/product/get-categories?parent_id=' + sub_category + '&sub_category=' + sub_sub_category, 'sub-sub-category-select', 'select');
-            // color select select2
-            $('.color-var-select').select2({
-                templateResult: colorCodeSelect,
-                templateSelection: colorCodeSelect,
-                escapeMarkup: function (m) {
-                    return m;
-                }
-            });
-
-            function colorCodeSelect(state) {
-                var colorCode = $(state.element).val();
-                if (!colorCode) return state.text;
-                return "<span class='color-preview' style='background-color:" + colorCode + ";'></span>" + state.text;
-            }
-        });
-    </script>
-<script src="https://demo.6amtech.com/6valley/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-<script src="https://demo.6amtech.com/6valley/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
-<script>$('textarea').ckeditor();</script>
-<script>
-        function check(){
-            for (instance in CKEDITOR.instances) {
-                CKEDITOR.instances[instance].updateElement();
-            }
-            var formData = new FormData(document.getElementById('product_form'));
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.post({
-                url: 'https://demo.6amtech.com/6valley/seller/product/update/17',
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function (data) {
-                    if (data.errors) {
-                        for (var i = 0; i < data.errors.length; i++) {
-                            toastr.error(data.errors[i].message, {
-                                CloseButton: true,
-                                ProgressBar: true
-                            });
-                        }
-                    } else {
-                        toastr.success('product updated successfully!', {
-                            CloseButton: true,
-                            ProgressBar: true
-                        });
-                        $('#product_form').submit();
-                    }
-                }
-            });
-        };
-    </script>
-<script>
-        update_qty();
-
-        function update_qty() {
-            var total_qty = 0;
-            var qty_elements = $('input[name^="qty_"]');
-            for (var i = 0; i < qty_elements.length; i++) {
-                total_qty += parseInt(qty_elements.eq(i).val());
-            }
-            if (qty_elements.length > 0) {
-
-                $('input[name="current_stock"]').attr("readonly", true);
-                $('input[name="current_stock"]').val(total_qty);
-            } else {
-                $('input[name="current_stock"]').attr("readonly", false);
-            }
-        }
-
-        $('input[name^="qty_"]').on('keyup', function () {
-            var total_qty = 0;
-            var qty_elements = $('input[name^="qty_"]');
-            for (var i = 0; i < qty_elements.length; i++) {
-                total_qty += parseInt(qty_elements.eq(i).val());
-            }
-            $('input[name="current_stock"]').val(total_qty);
-        });
-    </script>
-<script>
-        $(".lang_link").click(function (e) {
-            e.preventDefault();
-            $(".lang_link").removeClass('active');
-            $(".lang_form").addClass('d-none');
-            $(this).addClass('active');
-
-            let form_id = this.id;
-            let lang = form_id.split("-")[0];
-            console.log(lang);
-            $("#" + lang + "-form").removeClass('d-none');
-            if (lang == 'en') {
-                $(".rest-part").removeClass('d-none');
-            } else {
-                $(".rest-part").addClass('d-none');
-            }
-
-
-        })
-    </script>
-
-<script src="https://demo.6amtech.com/6valley/public/assets/back-end/js/vendor.min.js"></script>
-<script src="https://demo.6amtech.com/6valley/public/assets/back-end/js/theme.min.js"></script>
-<script src="https://demo.6amtech.com/6valley/public/assets/back-end/js/sweet_alert.js"></script>
-<script src="https://demo.6amtech.com/6valley/public/assets/back-end/js/toastr.js"></script>
-<script type="text/javascript"></script>
-
-<script>
-    $(document).on('ready', function () {
-        // ONLY DEV
-        // =======================================================
-        if (window.localStorage.getItem('hs-builder-popover') === null) {
-            $('#builderPopover').popover('show')
-                .on('shown.bs.popover', function () {
-                    $('.popover').last().addClass('popover-dark')
-                });
-
-            $(document).on('click', '#closeBuilderPopover', function () {
-                window.localStorage.setItem('hs-builder-popover', true);
-                $('#builderPopover').popover('dispose');
-            });
-        } else {
-            $('#builderPopover').on('show.bs.popover', function () {
-                return false
-            });
-        }
-        // END ONLY DEV
-        // =======================================================
-
-        // BUILDER TOGGLE INVOKER
-        // =======================================================
-        $('.js-navbar-vertical-aside-toggle-invoker').click(function () {
-            $('.js-navbar-vertical-aside-toggle-invoker i').tooltip('hide');
-        });
-
-        // INITIALIZATION OF MEGA MENU
-        // =======================================================
-        var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
-            desktop: {
-                position: 'left'
-            }
-        }).init();
-
-
-        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
-        // =======================================================
-        var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
-
-
-        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
-        // =======================================================
-        $('.js-nav-tooltip-link').tooltip({boundary: 'window'})
-
-        $(".js-nav-tooltip-link").on("show.bs.tooltip", function (e) {
-            if (!$("body").hasClass("navbar-vertical-aside-mini-mode")) {
-                return false;
-            }
-        });
-
-
-        // INITIALIZATION OF UNFOLD
-        // =======================================================
-        $('.js-hs-unfold-invoker').each(function () {
-            var unfold = new HSUnfold($(this)).init();
-        });
-
-
-        // INITIALIZATION OF FORM SEARCH
-        // =======================================================
-        $('.js-form-search').each(function () {
-            new HSFormSearch($(this)).init()
-        });
-
-
-        // INITIALIZATION OF SELECT2
-        // =======================================================
-        $('.js-select2-custom').each(function () {
-            var select2 = $.HSCore.components.HSSelect2.init($(this));
-        });
-
-
-        // INITIALIZATION OF DATERANGEPICKER
-        // =======================================================
-        $('.js-daterangepicker').daterangepicker();
-
-        $('.js-daterangepicker-times').daterangepicker({
-            timePicker: true,
-            startDate: moment().startOf('hour'),
-            endDate: moment().startOf('hour').add(32, 'hour'),
-            locale: {
-                format: 'M/DD hh:mm A'
-            }
-        });
-
-        var start = moment();
-        var end = moment();
-
-        function cb(start, end) {
-            $('#js-daterangepicker-predefined .js-daterangepicker-predefined-preview').html(start.format('MMM D') + ' - ' + end.format('MMM D, YYYY'));
-        }
-
-        $('#js-daterangepicker-predefined').daterangepicker({
-            startDate: start,
-            endDate: end,
-            ranges: {
-                'Today': [moment(), moment()],
-                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                'This Month': [moment().startOf('month'), moment().endOf('month')],
-                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-            }
-        }, cb);
-
-        cb(start, end);
-
-
-        // INITIALIZATION OF CLIPBOARD
-        // =======================================================
-        $('.js-clipboard').each(function () {
-            var clipboard = $.HSCore.components.HSClipboard.init(this);
-        });
-    });
-</script>
-<script src="https://demo.6amtech.com/6valley/public/assets/back-end/js/bootstrap.min.js"></script>
-<script>
-    $("#search-bar-input").keyup(function () {
-        $("#search-card").css("display", "block");
-        let key = $("#search-bar-input").val();
-        if (key.length > 0) {
-            $.get({
-                url: 'https://demo.6amtech.com/6valley/admin/search-function/',
-                dataType: 'json',
-                data: {
-                    key: key
-                },
-                beforeSend: function () {
-                    $('#loading').show();
-                },
-                success: function (data) {
-                    $('#search-result-box').empty().html(data.result)
-                },
-                complete: function () {
-                    $('#loading').hide();
-                },
-            });
-        } else {
-            $('#search-result-box').empty();
-        }
-    });
-
-    $(document).mouseup(function (e) {
-        var container = $("#search-card");
-        if (!container.is(e.target) && container.has(e.target).length === 0) {
-            container.hide();
-        }
-    });
-
-    function form_alert(id, message) {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: message,
-            type: 'warning',
-            showCancelButton: true,
-            cancelButtonColor: 'default',
-            confirmButtonColor: '#377dff',
-            cancelButtonText: 'No',
-            confirmButtonText: 'Yes',
-            reverseButtons: true
-        }).then((result) => {
-            if (result.value) {
-                $('#' + id).submit()
-            }
-        })
-    }
-</script>
-<script>
-    function call_demo() {
-        toastr.info('Update option is disabled for demo!', {
-            CloseButton: true,
-            ProgressBar: true
-        });
-    }
-</script>
-
-<script>
-    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="https://demo.6amtech.com/6valley/public/assets/back-end/vendor/babel-polyfill/polyfill.min.js"><\/script>');
-</script>
-<script src="https://demo.6amtech.com/6valley/public/assets/back-end/js/tags-input.min.js"></script>
-<script src="https://demo.6amtech.com/6valley/public/assets/select2/js/select2.min.js"></script>
-<script src="https://demo.6amtech.com/6valley/public/assets/back-end/js/spartan-multi-image-picker.js"></script>
-<script>
-        var imageCount = 1;
-        var thumbnail = 'https://demo.6amtech.com/6valley/storage/app/public/product/thumbnail/2021-06-05-60bb200ef1223.png';
-        $(function () {
-            if (imageCount > 0) {
-                $("#coba").spartanMultiImagePicker({
-                    fieldName: 'images[]',
-                    maxCount: imageCount,
-                    rowHeight: 'auto',
-                    groupClassName: 'col-6',
-                    maxFileSize: '',
-                    placeholderImage: {
-                        image: 'https://demo.6amtech.com/6valley/public/assets/back-end/img/400x400/img2.jpg',
-                        width: '100%',
-                    },
-                    dropFileLabel: "Drop Here",
-                    onAddRow: function (index, file) {
-
-                    },
-                    onRenderedPreview: function (index) {
-
-                    },
-                    onRemoveRow: function (index) {
-
-                    },
-                    onExtensionErr: function (index, file) {
-                        toastr.error('Please only input png or jpg type file', {
-                            CloseButton: true,
-                            ProgressBar: true
-                        });
-                    },
-                    onSizeErr: function (index, file) {
-                        toastr.error('File size too big', {
-                            CloseButton: true,
-                            ProgressBar: true
-                        });
-                    }
-                });
-            }
-            $("#thumbnail").spartanMultiImagePicker({
-                fieldName: 'image',
-                maxCount: 1,
-                rowHeight: 'auto',
-                groupClassName: 'col-12',
-                maxFileSize: '',
-                placeholderImage: {
-                    image: thumbnail,
-                    width: '100%',
-                },
-                dropFileLabel: "Drop Here",
-                onAddRow: function (index, file) {
-
-                },
-                onRenderedPreview: function (index) {
-
-                },
-                onRemoveRow: function (index) {
-
-                },
-                onExtensionErr: function (index, file) {
-                    toastr.error('Please only input png or jpg type file', {
-                        CloseButton: true,
-                        ProgressBar: true
-                    });
-                },
-                onSizeErr: function (index, file) {
-                    toastr.error('File size too big', {
-                        CloseButton: true,
-                        ProgressBar: true
-                    });
-                }
-            });
-
-        });
-
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#viewer').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        $("#customFileUpload").change(function () {
-            readURL(this);
-        });
-
-        $(".js-example-theme-single").select2({
-            theme: "classic"
-        });
-
-        $(".js-example-responsive").select2({
-            width: 'resolve'
-        });
-    </script>
-<script>
-        function getRequest(route, id, type) {
-            $.get({
-                url: route,
-                dataType: 'json',
-                success: function (data) {
-                    if (type == 'select') {
-                        $('#' + id).empty().append(data.select_tag);
-                    }
-                },
-            });
-        }
-
-        $('input[name="colors_active"]').on('change', function () {
-            if (!$('input[name="colors_active"]').is(':checked')) {
-                $('#colors-selector').prop('disabled', true);
-            } else {
-                $('#colors-selector').prop('disabled', false);
-            }
-        });
-
-        $('#choice_attributes').on('change', function () {
-            $('#customer_choice_options').html(null);
-            $.each($("#choice_attributes option:selected"), function () {
-                //console.log($(this).val());
-                add_more_customer_choice_option($(this).val(), $(this).text());
-            });
-        });
-
-        function add_more_customer_choice_option(i, name) {
-            let n = name.split(' ').join('');
-            $('#customer_choice_options').append('<div class="row"><div class="col-md-3"><input type="hidden" name="choice_no[]" value="' + i + '"><input type="text" class="form-control" name="choice[]" value="' + n + '" placeholder="messages.Choice Title" readonly></div><div class="col-lg-9"><input type="text" class="form-control" name="choice_options_' + i + '[]" placeholder="Enter choice values" data-role="tagsinput" onchange="update_sku()"></div></div>');
-            $("input[data-role=tagsinput], select[multiple][data-role=tagsinput]").tagsinput();
-        }
-
-        setInterval(function () {
-            $('.call-update-sku').on('change', function () {
-                update_sku();
-            });
-        }, 2000)
-
-        $('#colors-selector').on('change', function () {
-            update_sku();
-        });
-
-        $('input[name="unit_price"]').on('keyup', function () {
-            update_sku();
-        });
-
-        function update_sku() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            $.ajax({
-                type: "POST",
-                url: 'https://demo.6amtech.com/6valley/seller/product/sku-combination',
-                data: $('#product_form').serialize(),
-                success: function (data) {
-                    $('#sku_combination').html(data.view);
-                    if (data.length > 1) {
-                        $('#quantity').hide();
-                    } else {
-                        $('#quantity').show();
-                    }
-                }
-            });
-        }
-
-        $(document).ready(function () {
-            let category = $("#category_id").val();
-            let sub_category = $("#sub-category-select").attr("data-id");
-            let sub_sub_category = $("#sub-sub-category-select").attr("data-id");
-            getRequest('https://demo.6amtech.com/6valley/seller/product/get-categories?parent_id=' + category + '&sub_category=' + sub_category, 'sub-category-select', 'select');
-            getRequest('https://demo.6amtech.com/6valley/seller/product/get-categories?parent_id=' + sub_category + '&sub_category=' + sub_sub_category, 'sub-sub-category-select', 'select');
-            // color select select2
-            $('.color-var-select').select2({
-                templateResult: colorCodeSelect,
-                templateSelection: colorCodeSelect,
-                escapeMarkup: function (m) {
-                    return m;
-                }
-            });
-
-            function colorCodeSelect(state) {
-                var colorCode = $(state.element).val();
-                if (!colorCode) return state.text;
-                return "<span class='color-preview' style='background-color:" + colorCode + ";'></span>" + state.text;
-            }
-        });
-    </script>
-<script src="https://demo.6amtech.com/6valley/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-<script src="https://demo.6amtech.com/6valley/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
-<script>$('textarea').ckeditor();</script>
-<script>
-        function check(){
-            for (instance in CKEDITOR.instances) {
-                CKEDITOR.instances[instance].updateElement();
-            }
-            var formData = new FormData(document.getElementById('product_form'));
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.post({
-                url: 'https://demo.6amtech.com/6valley/seller/product/update/17',
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function (data) {
-                    if (data.errors) {
-                        for (var i = 0; i < data.errors.length; i++) {
-                            toastr.error(data.errors[i].message, {
-                                CloseButton: true,
-                                ProgressBar: true
-                            });
-                        }
-                    } else {
-                        toastr.success('product updated successfully!', {
-                            CloseButton: true,
-                            ProgressBar: true
-                        });
-                        $('#product_form').submit();
-                    }
-                }
-            });
-        };
-    </script>
-<script>
-        update_qty();
-
-        function update_qty() {
-            var total_qty = 0;
-            var qty_elements = $('input[name^="qty_"]');
-            for (var i = 0; i < qty_elements.length; i++) {
-                total_qty += parseInt(qty_elements.eq(i).val());
-            }
-            if (qty_elements.length > 0) {
-
-                $('input[name="current_stock"]').attr("readonly", true);
-                $('input[name="current_stock"]').val(total_qty);
-            } else {
-                $('input[name="current_stock"]').attr("readonly", false);
-            }
-        }
-
-        $('input[name^="qty_"]').on('keyup', function () {
-            var total_qty = 0;
-            var qty_elements = $('input[name^="qty_"]');
-            for (var i = 0; i < qty_elements.length; i++) {
-                total_qty += parseInt(qty_elements.eq(i).val());
-            }
-            $('input[name="current_stock"]').val(total_qty);
-        });
-    </script>
-<script>
-        $(".lang_link").click(function (e) {
-            e.preventDefault();
-            $(".lang_link").removeClass('active');
-            $(".lang_form").addClass('d-none');
-            $(this).addClass('active');
-
-            let form_id = this.id;
-            let lang = form_id.split("-")[0];
-            console.log(lang);
-            $("#" + lang + "-form").removeClass('d-none');
-            if (lang == 'en') {
-                $(".rest-part").removeClass('d-none');
-            } else {
-                $(".rest-part").addClass('d-none');
-            }
-
-
-        })
-    </script>
-<script src="https://demo.6amtech.com/6valley/public/ckeditor/ckeditor.js"></script>
-<script>CKEDITOR.replace('editor');</script>
-<script>
-    initSample();
-</script>
+    </div>
+    </div>
+
+</section>
+@section('js')
+<script src="../../../app-assets/vendors/js/editors/quill/katex.min.js"></script>
+<script src="../../../app-assets/vendors/js/editors/quill/highlight.min.js"></script>
+<script src="../../../app-assets/vendors/js/editors/quill/quill.min.js"></script>
+<script src="../../../app-assets/vendors/js/extensions/jquery.steps.min.js"></script>
+<script src="../../../app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+<script src="../../../app-assets/js/scripts/editors/editor-quill.js"></script>
+<script src="../../../app-assets/js/scripts/extensions/dropzone.js"></script>
+<script src="../../../app-assets/vendors/js/extensions/dropzone.min.js"></script>
+<script src="../../../app-assets/vendors/js/ui/prism.min.js"></script>
+
+@stop
 @endsection()

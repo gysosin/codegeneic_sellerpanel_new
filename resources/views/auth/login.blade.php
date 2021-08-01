@@ -71,7 +71,7 @@
                                                 <a href="#" class="btn btn-facebook"><span class="fa fa-facebook"></span></a>
                                                 </a>
                                                 <a href="#" class="btn btn-google"><span class="fa fa-google"></span></a>
-                                                <button type="" class="btn btn-primary float-right btn-inline"><a href='/' style="color: white;">Dashboard demo</a></button>
+                                                <button type="" class="btn btn-primary float-right btn-inline"><a href='/dashboard' style="color: white;">Dashboard demo</a></button>
                                             </div>
                                         </div>
                                     </div>

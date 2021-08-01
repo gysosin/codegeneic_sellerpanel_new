@@ -25,10 +25,6 @@ Route::get('/dashboard-contactissue', function () {
 Route::get('/dashboard', function () {
     return view('dashboard/maindashboard');
 });
-
-Route::get('/', function () {
-    return view('dashboard/maindashboard');
-});
 //dashboard routes end
 
 //orders route start
@@ -109,7 +105,7 @@ Route::get('/gstin3register', function () {
 Route::get('/gstinregister', function () {
     return view('auth/gstinregistration');
 });
-Route::get('/login', function () {
+Route::get('/', function () {
     return view('auth/login');
 });
 Route::get('/editprofile', function () {
