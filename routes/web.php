@@ -105,7 +105,7 @@ Route::get('/gstin2register', function () {
 });
 Route::get('/gstin3register', function () {
     return view('auth/gstin3registration');
-}); 
+});
 Route::get('/gstinregister', function () {
     return view('auth/gstinregistration');
 });
@@ -122,7 +122,7 @@ Route::get('/gstinselector', function () {
 
 Route::get('/dashboard-cancellation', function () {
     return view('dashboard/user_utility/cancellation');
-});Route::get('/dashboard-purchasehistory', function () {
+});
+Route::get('/dashboard-purchasehistory', function () {
     return view('dashboard/user_utility/purchasehistory');
 });
-
