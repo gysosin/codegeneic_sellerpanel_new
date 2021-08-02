@@ -17,7 +17,8 @@
                 </li>
                 <li class=" navigation-header"><span>Orders</span>
                 </li>
-                <li class=" nav-item"><a href='/dashboard-allorders'><i class="fa fa-opencart"></i><span class="menu-title" data-i18n="Email">Orders Status</span></a>
+                <li class=" nav-item"><a href='/dashboard-allorders'><i class="fa 
+fa-dropbox"></i><span class="menu-title" data-i18n="Email">Order Status</span></a>
                     <ul class="menu-content">
                         <li class=" nav-item"><a href='/dashboard-allorders'><i class="feather icon-message-square"></i><span class="menu-title" data-i18n="Chat">All</span></a>
                         </li>

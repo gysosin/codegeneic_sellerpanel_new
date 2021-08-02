@@ -191,8 +191,7 @@
 
 @section('js')
 <script src="{{asset('/app-assets/js/scripts/ui/data-list-view.js')}}"></script>
-<!-- BEGIN: Page Vendor JS-->
-<!-- END: Page Vendor JS-->
+
 @stop
 
 @endsection()

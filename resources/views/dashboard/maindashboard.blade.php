@@ -1,13 +1,5 @@
 @extends('layouts.master')
 @section('title', 'dashboard')
-
-<link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('/app-assets/css/core/colors/palette-gradient.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('/app-assets/vendors/css/charts/apexcharts.css')}}">
-
-
-
-
 @section('body')
 
 <!-- Dashboard Ecommerce Starts -->
@@ -23,7 +15,7 @@
                         </div>
                     </div>
                     <h2 class="text-bold-700 mt-1">97.5k</h2>
-                    <p class="mb-0">Revenue Generated</p>
+                    <p class="mb-0">Gross Revenue</p>
                 </div>
                 <div class="card-content">
                     <div id="line-area-chart-2"></div>
@@ -40,7 +32,7 @@
                         </div>
                     </div>
                     <h2 class="text-bold-700 mt-1">97.5K</h2>
-                    <p class="mb-0">Orders Received</p>
+                    <p class="mb-0">Total orders</p>
                 </div>
                 <div class="card-content">
                     <div id="line-area-chart-4"></div>
@@ -88,10 +80,10 @@
                             <div class="col-lg-6 col-12 d-flex justify-content-between flex-column order-lg-1 order-2">
                                 <div>
                                     <h2 class="text-bold-700 mb-25">2.7K</h2>
-                                    <p class="text-bold-500 mb-75">Avg Sessions</p>
+                                    <p class="text-bold-500 mb-75">Total orders</p>
                                     <h5 class="font-medium-2">
                                         <span class="text-success">+5.2% </span>
-                                        <span>vs last 7 days</span>
+                                        <span>More orders this week</span>
                                     </h5>
                                 </div>
                                 <a href="#" class="btn btn-primary shadow">View Details <i class="feather icon-chevrons-right"></i></a>
@@ -113,25 +105,25 @@
                         <hr />
                         <div class="row avg-sessions pt-50">
                             <div class="col-6">
-                                <small>Goal: $100000</small>
+                                <small>This weeek : 15</small>
                                 <div class="progress progress-bar-primary mt-25">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="50" aria-valuemax="100" style="width:50%"></div>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <small>Users: 100K</small>
+                                <small>Last week : 20</small>
                                 <div class="progress progress-bar-warning mt-25">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="60" aria-valuemax="100" style="width:60%"></div>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <small>Retention: 90%</small>
+                                <small>This month : 90</small>
                                 <div class="progress progress-bar-danger mt-25">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="70" aria-valuemax="100" style="width:70%"></div>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <small>Duration: 1yr</small>
+                                <small>Last month : 120</small>
                                 <div class="progress progress-bar-success mt-25">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="90" aria-valuemax="100" style="width:90%"></div>
                                 </div>
@@ -143,40 +135,12 @@
         </div>
 
     </div>
-    <div class="row">
-
-        <div class="col-lg-6 col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Orders Recieved weekly</h4>
-                </div>
-                <div class="card-content">
-                    <div class="card-body">
-                        <div id="line-area-chart"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Orders recieved monthly</h4>
-                </div>
-                <div class="card-content">
-                    <div class="card-body">
-                        <div id="line-chart"></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+ 
 </section>
 
 
 @section('js')
-<script src="{{asset('/app-assets/js/scripts/charts/chart-apex.js')}}"></script>
 <script src="{{asset('/app-assets/vendors/js/charts/apexcharts.min.js')}}"></script>
 <script src="{{asset('/app-assets/js/scripts/pages/dashboard-ecommerce.js')}}"></script>
-<script src="../../../app-assets/js/scripts/cards/card-analytics.js"></script>
 @stop
 @endsection()

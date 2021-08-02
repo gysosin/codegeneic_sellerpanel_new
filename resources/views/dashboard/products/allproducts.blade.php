@@ -116,7 +116,7 @@
                     <h4 class="card-title">All products</h4>
                     <div class="col-lg-6 col-md-12">
                                                 <div class="form-group">
-                                                 <a href='/dashboard-addproduct'><button type="button"  class="btn mb-1 btn-primary btn-lg btn-block waves-effect waves-light float-right">Add a product</button></a>
+                                                 <a href='/dashboard-addproduct'><button type="button"  class="btn mb-1 btn-primary btn-md btn-block waves-effect waves-light float-right">Add a product</button></a>
                                                 </div>
                                             </div>
                 </div>
@@ -517,13 +517,7 @@
 </section>
 <!-- Column selectors with Export Options and print table -->
 @section('js')
-<script src="../../../app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
-<script src="../../../app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
 <script src="../../../app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
-<script src="../../../app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
-<script src="../../../app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
-<script src="../../../app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
-<script src="../../../app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
 <script src="../../../app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
 <script src="../../../app-assets/js/scripts/datatables/datatable.js"></script>
 @stop

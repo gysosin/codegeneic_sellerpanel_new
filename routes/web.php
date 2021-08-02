@@ -105,6 +105,9 @@ Route::get('/gstin3register', function () {
 Route::get('/gstinregister', function () {
     return view('auth/gstinregistration');
 });
+Route::get('/forgot-password', function () {
+    return view('auth/forgotpassword');
+});
 Route::get('/', function () {
     return view('auth/login');
 });
